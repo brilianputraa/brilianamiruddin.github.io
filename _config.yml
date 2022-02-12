@@ -1,5 +1,5 @@
-title: Brilian
-description: A minimal and beautiful Jekyll theme best for writing and note-taking.
+title: Reifion
+description: Brilian Putra Amiruddin's Personal Websie
 author: Brilian Putra Amiruddin
 avatar: /logo.png
 email: brilianpamiruddin@gmail.com
@@ -36,8 +36,7 @@ logo: logo.png
 social:
   name: Brilian Putra Amiruddin
   links:
-    - https://twitter.com/ngzhio
-    - https://www.facebook.com/ngzhio
-    - https://github.com/ngzhio
+    - https://twitter.com/brilianputraa
+    - https://github.com/brilianputraa
 google_site_verification: #
 lang: en
