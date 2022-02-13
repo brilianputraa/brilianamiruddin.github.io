@@ -1,5 +1,5 @@
 title: Reifion
-description: Brilian Putra Amiruddin's Personal Websie
+description: Brilian Putra Amiruddin's Personal Website
 author: Brilian Putra Amiruddin
 avatar: /logo.png
 email: brilianpamiruddin@gmail.com
@@ -10,7 +10,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
-paginate: 10
+paginate: 5
 
 # Uncomment the below line and set the tracking ID for enabling Google Analytics
 # 
