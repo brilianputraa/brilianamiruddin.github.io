@@ -2,7 +2,7 @@
 
   <div class="footer-col">
     <div class="copyright">
-      {% assign year_from = 2021}
+      {% assign year_from = site.posts[-1].date | date: '%Y' %}
       {% assign year_to   = site.time | date: '%Y' %}
       {% if year_from == nil or year_from == year_to %}
         {% assign year_string = year_from %}
