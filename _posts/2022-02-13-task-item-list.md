@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What I've Learned from Jaxton Part 1: JAX NumPy Array (JNP)"
+title: "Why JAX is an attractive library for research"
 toc: true
 author:
   - Brilian Putra Amiruddin
