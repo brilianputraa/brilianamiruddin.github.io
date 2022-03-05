@@ -9,7 +9,8 @@ author:
 
 As we know, in order to develop good machine learning models, the first step we need to consider is the product’s request matter and we suppose to make the first model the most simple model to address what the product’s need (제품의 요구 사항에 맞는 가장 간단한 모델이어야 한다). Because we can swiftly make iteration progress on ML as soon as there are results. 
 
-Referring to the book, there are 3 steps covered to increase our model complexity for ML Editor** (머신러닝 에디터의 복잡도를 높일 가능성이 있는 세 가지 방법을 다루었다).
+Referring to the book, there are 3 steps covered to increase our model complexity for [ML Editor](#linknote)
+ (머신러닝 에디터의 복잡도를 높일 가능성이 있는 세 가지 방법을 다루었다).
 
 
 
@@ -37,5 +38,5 @@ Referring to the book, there are 3 steps covered to increase our model complexit
 
 Depending on the cases, all of these three approaches are different and might be evolving as we learn more from the prototypes along the way. But when working on ML, you should define a common set of metrics to compare the success of modeling pipelines (머신러닝으로 진행할 때는 모델 파이프라인의 성능을 비교하기 위해서 공통된 측정 지표를 정의해야 된다).
 
-****ML Editor** is a project by the author, which creates an ML-based question editor on a forum such as the stack exchange.
+#### <a name="linknote"></a>A ****ML Editor** is a project by the author, which creates an ML-based question editor on a forum such as the stack exchange.
 
