@@ -7,7 +7,7 @@ author:
   - Brilian Putra Amiruddin
 ---
 
-<img src="https://images.unsplash.com/photo-1583833008338-31a6657917ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="drawing" style='height: 70%; width: 70%; object-fit: contain'/>
+<img src="https://images.unsplash.com/photo-1583833008338-31a6657917ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="drawing" style='height: 100%; width: 100%; object-fit: contain'/>
 
 As we know, in order to develop good machine learning models, the first step we need to consider is the product’s request matter and we suppose to make the first model the most simple model to address what the product’s need (제품의 요구 사항에 맞는 가장 간단한 모델이어야 한다). Because we can swiftly make iteration progress on ML as soon as there are results. 
 
