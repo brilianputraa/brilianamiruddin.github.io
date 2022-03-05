@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "[MLOps] Machine Learning Powered Applications - ML Project Success Measurement (머신러닝 프로젝트의 성공 측정하기)"
-categories: machine_learning
+categories: study-log
+tags: [machine learning, mlops]
+author:
+  - Brilian Putra Amiruddin
 ---
 
-
-# As we know, in order to develop good machine learning models, the first step we need to consider is the product’s request matter and we suppose to make the first model the most simple model to address what the product’s need (제품의 요구 사항에 맞는 가장 간단한 모델이어야 한다). Because we can swiftly make iteration progress on ML as soon as there are results. 
+As we know, in order to develop good machine learning models, the first step we need to consider is the product’s request matter and we suppose to make the first model the most simple model to address what the product’s need (제품의 요구 사항에 맞는 가장 간단한 모델이어야 한다). Because we can swiftly make iteration progress on ML as soon as there are results. 
 
 Referring to the book, there are 3 steps covered to increase our model complexity for ML Editor** (머신러닝 에디터의 복잡도를 높일 가능성이 있는 세 가지 방법을 다루었다).
 
