@@ -3,7 +3,7 @@ layout: post
 toc: true
 title: "[MLOps] Machine Learning Powered Applications - ML Project Success Measurement (머신러닝 프로젝트의 성공 측정하기)"
 categories: study-log
-tags: [machine learning, mlops]
+tags: [machine-learning, mlops]
 author:
   - Brilian Putra Amiruddin
 ---
@@ -17,7 +17,7 @@ As we know, in order to develop good machine learning models, the first step we 
 Referring to the book, there are 3 steps covered to increase our model complexity for [ML Editor](#linknote)
  (머신러닝 에디터의 복잡도를 높일 가능성이 있는 세 가지 방법을 다루었다).
 
-
+    
 
 1. Baseline Model: Designing Heuristics Based on Domain Knowledge (기준 모델: 도메인 지식을 활용해 경험적인 규칙을 설계한다)
 
