@@ -10,7 +10,7 @@ author:
 
 <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb">  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-In general, PyTorch has 3 different types of matrix multiplication and each of the types has its own characteristics and the way to use it. They are **torch.matmul, torch.mm, and torch.bmm**. Then, let’s look at them one by one in detail!  
+In general, PyTorch has 3 different types of matrix multiplication and each of the types has its own characteristics and the way to use it. They are **torch.matmul, torch.mm, and torch.bmm**. Then, let’s look at them one by one in detail!    
 
 파이토치는 3종 행렬 곱셈이 기본적으로 가지고 있으며 각각 종은 다른 특징과 방식도 갖는다. 그것들은 **torch.matmul, torch.mm, torch.bmm**. 그렇다면, 각각 행렬 곱셈의 기능에 대해 상세하게 알아보자!
 
