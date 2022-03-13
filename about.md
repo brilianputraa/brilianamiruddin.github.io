@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-**An aspiring master's student who passionately spent most of the time doing research and learn something new about Robotics, Control and Machine Learning. Problem-solving is my 24/7 best mate. <br/> <br/>
+**Hi I'm Bili!, An aspiring master's student who passionately spent most of the time doing research and learn something new about Robotics, Control and Machine Learning. <br/> <br/>
 Never hesitate to reach out to me if you have any inquiries**
 
 ## Research Interests
