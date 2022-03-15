@@ -10,12 +10,12 @@ author:
 
 <a href="https://colab.research.google.com/drive/1i-xscoArLfV3qjUSFpPyRA3uykBi-C0x#scrollTo=orcx_gB85JBl">  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-In general, PyTorch has 3 different types of matrix multiplication and each of the types has its own characteristics and the way to use it. They are **torch.matmul, torch.mm, and torch.bmm**. Then, let’s look at them one by one in detail!.  
-파이토치는 3종 행렬 곱셈이 기본적으로 가지고 있으며 각각 종은 다른 특징과 방식도 갖는다. 그것들은 **torch.matmul, torch.mm, torch.bmm**. 그렇다면, 각각 행렬 곱셈의 기능에 대해 상세하게 알아보자!.
+In general, ``PyTorch`` has 3 different types of matrix multiplication and each of the types has its own characteristics and the way to use it. They are ``torch.matmul, torch.mm, and torch.bmm``. Then, let’s look at them one by one in detail!.  
+파이토치는 3종 행렬 곱셈이 기본적으로 가지고 있으며 각각 종은 다른 특징과 방식도 갖는다. 그것들은 ``torch.matmul, torch.mm, torch.bmm``. 그렇다면, 각각 행렬 곱셈의 기능에 대해 상세하게 알아보자!.
 
 ## torch.matmul
 
-The **torch.matmul** has an ability to perform the matrix multiplication in several ways. This **torch.matmul** can automatically broadcast the tensor size to fit the the other tensor sizes without explicitly define the compatible tensor sizes during multiplication. Additionally, **torch.matmul** is also able to perform matrix with scalar multiplication, vanilla matrix multiplications, and batched matrix multiplication.
+The ``torch.matmul`` has an ability to perform the matrix multiplication in several ways. This ``torch.matmul`` can automatically broadcast the tensor size to fit the the other tensor sizes without explicitly define the compatible tensor sizes during multiplication. Additionally, ``torch.matmul`` is also able to perform matrix with scalar multiplication, vanilla matrix multiplications, and batched matrix multiplication.
 
 > torch.matmul 구현 코드
 
@@ -52,7 +52,7 @@ print(torch.matmul(a,b).size())
 ``` 
 ## torch.mm
 
-**torch.mm** function is only used for multiplying 2D tensor or we can say to perform a vanilla 2D matrix multiplication. Different with **torch.matmul** the **torch.mm** function doesn’t have tensor broadcasting ability.
+``torch.mm`` function is only used for multiplying 2D tensor or we can say to perform a vanilla 2D matrix multiplication. Different with ``torch.matmul`` the ``torch.mm`` function doesn’t have tensor broadcasting ability.
 
 > torch.mm 구현 코드
 
@@ -66,7 +66,7 @@ print(torch.mm(a,b).size())
 
 
 ## torch.bmm
-The last one is **torch.bmm**, this multiplication is only for doing batched tensor multiplication. However, compared to the **torch.matmul**, the **torch.bmm** also doesn’t have ability to do tensor broadcasting. Therefore, **torch.bmm** is merely a special function for doing batched tensor multiplication.
+The last one is ``torch.bmm``, this multiplication is only for doing batched tensor multiplication. However, compared to the ``torch.matmul``, the ``torch.bmm`` also doesn’t have ability to do tensor broadcasting. Therefore, ``torch.bmm`` is merely a special function for doing batched tensor multiplication.
 
 > torch.bmm 구현 코드
 
@@ -79,5 +79,4 @@ print(torch.bmm(a,b).size())
 ```
 
 
-> Written with [StackEdit](https://stackedit.io/) ❤️.
-
+> Written with [StackEdit](https://stackedit.io/) with ❤️.
