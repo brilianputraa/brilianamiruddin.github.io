@@ -10,14 +10,14 @@ author:
 
 <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb">  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-In general, PyTorch has 3 different types of matrix multiplication and each of the types has its own characteristics and the way to use it. They are **torch.matmul, torch.mm, and torch.bmm**. Then, let’s look at them one by one in detail! <br/> <br/>
+In general, PyTorch has 3 different types of matrix multiplication and each of the types has its own characteristics and the way to use it. They are <mark>torch.matmul, torch.mm, and torch.bmm</mark>. Then, let’s look at them one by one in detail! <br/> <br/>
 
 
-파이토치는 3종 행렬 곱셈이 기본적으로 가지고 있으며 각각 종은 다른 특징과 방식도 갖는다. 그것들은 **torch.matmul, torch.mm, torch.bmm**. 그렇다면, 각각 행렬 곱셈의 기능에 대해 상세하게 알아보자!
+파이토치는 3종 행렬 곱셈이 기본적으로 가지고 있으며 각각 종은 다른 특징과 방식도 갖는다. 그것들은 <mark>torch.matmul, torch.mm, torch.bmm</mark>. 그렇다면, 각각 행렬 곱셈의 기능에 대해 상세하게 알아보자!
 
 ## torch.matmul
 
-The **torch.matmul** has an ability to perform the matrix multiplication in several ways. This **torch.matmul** can automatically broadcast the tensor size to fit the the other tensor sizes without explicitly define the compatible tensor sizes during multiplication. Additionally, **torch.matmul** is also able to perform matrix with scalar multiplication, vanilla matrix multiplications, and batched matrix multiplication.
+The <mark>torch.matmul</mark> has an ability to perform the matrix multiplication in several ways. This <mark>torch.matmul</mark> can automatically broadcast the tensor size to fit the the other tensor sizes without explicitly define the compatible tensor sizes during multiplication. Additionally, <mark>torch.matmul</mark> is also able to perform matrix with scalar multiplication, vanilla matrix multiplications, and batched matrix multiplication.
 
 > torch.matmul 구현 코드
 
