@@ -77,6 +77,7 @@ a = torch.rand(3,1,2)
 b = torch.rand(3,2,4)
 print(torch.bmm(a,b).size())
 # The output size is (3,1,4)
+```
 
 
 > Written with [StackEdit](https://stackedit.io/) ❤️.
