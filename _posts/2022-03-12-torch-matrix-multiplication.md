@@ -18,7 +18,7 @@ In general, ``PyTorch`` has 3 different types of matrix multiplication and each 
 
 The ``torch.matmul`` has an ability to perform the matrix multiplication in several ways. This ``torch.matmul`` can automatically broadcast the tensor size to fit the the other tensor sizes without explicitly define the compatible tensor sizes during multiplication. Additionally, ``torch.matmul`` is also able to perform matrix with scalar multiplication, vanilla matrix multiplications, and batched matrix multiplication.
 
-``torch.matmul``은 몇 몇 행렬 곱셈의 기능을 갖는다. 텐서의 크기가 맞을 수 있도록 이 ``torch.matmul``이 자동적으로 텐서를 broadcast할 수 있으며 텐서의 크기를 스스로 정의하는 것이 필요없다. 게다가, ``torch.matmul``도 행렬과 스칼라 곱셈, 평봄한 행렬 곱셈, 그리고 배치 행렬 곱셈이다.
+``torch.matmul``은 몇 몇 행렬 곱셈의 기능을 갖는다. 텐서의 크기가 맞을 수 있도록 이 ``torch.matmul``이 자동적으로 텐서를 broadcast할 수 있으며 텐서의 크기를 스스로 정의하는 것이 필요없다. 게다가, ``torch.matmul``도 행렬과 스칼라 곱셈, 평범한 행렬 곱셈, 그리고 배치 행렬 곱셈이다.
 > torch.matmul 구현 코드
 
 ```python
