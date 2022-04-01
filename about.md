@@ -9,7 +9,7 @@ Never hesitate to reach out to me if you have any inquiries**
 
 ## Research Interests
 
-- **Robotics Control, Computer Vision, Deep Learning and Reinforcement Learning**
+- **Robotics Control, Intelligent Control, Computer Vision, Deep Learning and Reinforcement Learning**
 
 
 ## CV/Resume
