@@ -21,9 +21,9 @@ tags: [optimal_control,model_predictive_control]
 ## Convex Function
 $$ \text{A function} \, f(x) :  \mathbb{R^n} \rightarrow \mathbb{R} \, \text{whose epigraph is a convex set.} $$
 
-But what is epigraph? `Everything above the function lines is called epigraph.`
+![Convex Function](/assets/fig/convexfunc.jpg)
 
-![Convex Function](/assets/fig/convexfunc.png)
+But what is epigraph? `Everything above the function lines is called epigraph` (*dark green hatched area* in the figure above).
 
 ### Examples of Convex Function:
 - `Linear` $$f(x) = c^Tx $$
