@@ -12,19 +12,19 @@ tags: [optimal_control,model_predictive_control]
 
 ### Examples of Convex Sets:
 - `Linear Subspace` $$ Ax =b $$
-- `Half-space, Hyperplane, Polytope` $$\begin{align} Ax \leq{b} \end{align}$$
-- `Elipsoids` $$\begin{align} x^TPx \leq 1, P \gt 0 \end{align}$$
-- `Cones` $$\begin{align} \| x_{2:n}\|_2 \leq  x_1  \end{align}$$
+- `Half-space, Hyperplane, Polytope` $$ Ax \leq{b} $$
+- `Elipsoids` $$ x^TPx \leq 1, P \gt 0 $$
+- `Cones` $$ \| x_{2:n}\|_2 \leq  x_1  $$
 
 ## Convex Function
-$$ \begin{aligned} \text{A function} \, f(x) :  \mathbb{R^n} \rightarrow \mathbb{R} \, \text{whose epigraph is a convex set.}  \end{aligned}$$
+$$ \text{A function} \, f(x) :  \mathbb{R^n} \rightarrow \mathbb{R} \, \text{whose epigraph is a convex set.} $$
 
 But what is epigraph? `Everything above the function lines is called epigraph.`
 
 ### Examples of Convex Function:
-- `Linear` $$\begin{align} f(x) = c^Tx \end{align}$$
-- `Quadratic` $$\begin{align} f(x) = \frac{1}{2}x^TQx + q^Tx, Q \gt{0} \end{align}$$
-- `Norms (Any Norms)` $$\begin{align}  \lvert x \rvert \end{align}$$
+- `Linear` $$f(x) = c^Tx $$
+- `Quadratic` $$ f(x) = \frac{1}{2}x^TQx + q^Tx, Q \gt{0} $$
+- `Norms (Any Norms)` $$  \lvert x \rvert $$
 
 ## Convex Optimization Problem
 Generally, solving a convex optimization problem is **minimizing a convex function over a convex sets**. 
