@@ -10,6 +10,8 @@ tags: [optimal_control,model_predictive_control]
 ## Convex Set
 `Definition` a line connecting to line in the sets is constrained in the set. The simple terms is we can connect any two points inside the set with a line. **In condition that the line which connects the two points is inside the sets**.
 
+![Convex Set](/assets/fig/convexsets.png)
+
 ### Examples of Convex Sets:
 - `Linear Subspace` $$ Ax =b $$
 - `Half-space, Hyperplane, Polytope` $$ Ax \leq{b} $$
