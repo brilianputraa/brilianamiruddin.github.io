@@ -1,4 +1,11 @@
-# [Optimal Control/최적제어] Convexity 
+---
+layout: post
+title: "[Optimal Control/최적제어] Convexity"
+toc: true
+author:
+  - Brilian Putra Amiruddin
+tags: [optimal_control,model_predictive_control]
+---
 
 ## Convex Set
 `Definition` a line connecting to line in the sets is constrained in the set. The simple terms is we can connect any two points inside the set with a line. **In condition that the line which connects the two points is inside the sets**.
