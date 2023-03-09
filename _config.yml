@@ -18,7 +18,8 @@ paginate: 5
 
 # Uncomment the below lines and set the Disqus shortname for enabling Disqus
 # 
-disqus: kaienknight
+disqus:
+  shortname: kaienknight
 
 # Jekyll
 # ======
