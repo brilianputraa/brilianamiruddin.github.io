@@ -23,6 +23,8 @@ $$ \text{A function} \, f(x) :  \mathbb{R^n} \rightarrow \mathbb{R} \, \text{who
 
 But what is epigraph? `Everything above the function lines is called epigraph.`
 
+![Convex Function](/assets/fig/convexfunc.png)
+
 ### Examples of Convex Function:
 - `Linear` $$f(x) = c^Tx $$
 - `Quadratic` $$ f(x) = \frac{1}{2}x^TQx + q^Tx, Q \gt{0} $$
