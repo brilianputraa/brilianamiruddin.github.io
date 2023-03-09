@@ -3,7 +3,6 @@ layout: post
 title: "[Optimal Control/최적제어] Convexity"
 toc: true
 categories: study-log
-layout: default
 comments: true
 author:
   - Brilian Putra Amiruddin
