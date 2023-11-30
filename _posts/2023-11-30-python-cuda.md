@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[프로그램잉/Programming] GPU Programming in Python: CUDA"
+title: "[Programming/프로그램잉] GPU Programming in Python: CUDA"
 toc: true
 mathjax: true
 categories: study-log
@@ -8,7 +8,7 @@ author:
   - Brilian Putra Amiruddin
 tags: [parallel programming,python,cuda,gpu]
 --- 
-# [프로그램잉/Programming] GPU Programming in Python: CUDA
+# [Programming/프로그램잉] GPU Programming in Python: CUDA
 
 ## Why GPU? ⚡
 
