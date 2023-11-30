@@ -39,8 +39,7 @@ The thread hierarchy can be represented by three components:
 -   Thread
     -   Executing the CUDA code
     -   Having each **threadIdx** up to 3 dimensions
-    -   The threadIdx is utilized to specify which part of data we want to compute on
-        -   **threadIdx** has
+    -   The **threadIdx** is utilized to specify which part of data we want to compute on
 -   Block
     -   Organizing the group of threads
     -   Blocks execute independently
