@@ -20,7 +20,7 @@ While GPUs are commonly used for accelerating graphics processing, such as rende
 
 ``It is important to note that CPUs may still be more efficient for tasks that require complex logic or decision-making, and GPUs are not always the best choice.``
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4ecb7968-bd5c-4f68-b0d1-9c4479fb7064/44a57845-409f-437d-9b05-57942cbda435/Untitled.png)
+![CPU vs GPU](/assets/fig/cpu_vs_gpu.png)
 
 ## Ways to do CUDA GPU Programming in Python
 
@@ -32,7 +32,7 @@ _**We do the same operations on different subsets of the same data or different 
 
 Before diving deeper into the CUDA API, let’s see the basic thread hierarchy of the CUDA programming paradigm
 
-![CUDA API prorgram archi.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4ecb7968-bd5c-4f68-b0d1-9c4479fb7064/3bb4028f-504d-4d7b-8967-08559e71701e/CUDA_API_prorgram_archi.png)
+![CUDA API prorgram archi.png](/assets/fig/block_thread_grid.png)
 
 The thread hierarchy can be represented by three components:
 
