@@ -8,7 +8,7 @@ author:
   - Brilian Putra Amiruddin
 tags: [parallel programming,python,cuda,gpu]
 --- 
-# [Programming/프로그램잉] GPU Programming in Python: CUDA
+# GPU Programming in Python: CUDA
 
 ## Why GPU? ⚡
 
