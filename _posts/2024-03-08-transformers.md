@@ -10,7 +10,7 @@ tags: [machine learning,sequence modeling,deep learning,gpu]
 --- 
 # Transformer (트랜스포머)
 
-![transformer_illustrated.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4ecb7968-bd5c-4f68-b0d1-9c4479fb7064/f0f802f9-b077-4ffe-9bd7-7662a454d6f5/Untitled.png)
+![transformer_illustrated.png](/assets/fig/transformer_illustrated.png)
 
 The **`Transformer model ditches the need for recurrent and convolution layers`** in sequence modeling entirely by relying solely on **`attention mechanisms`**.
 The transformer model has **two components**: **the encoder** and **the decoder**, which is similar to **the Seq2Seq model**.
@@ -47,7 +47,7 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
                 
             - For each sequence of data, the **set of weights inside the Query, Value, and Key will be reused, so it will be the same**. Due to this good characteristic, **the transformer has the advantage that it can be parallelized**.
             
-            ![Attentionisallyouneed.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4ecb7968-bd5c-4f68-b0d1-9c4479fb7064/af1ed855-bf5a-4679-85e7-2abdf4c54e81/Attentionisallyouneed.png)
+            ![Attentionisallyouneed.png](/assets/fig/Attentionisallyouneed.png)
             
         - We can also think of self-attention as a cell. ***By stacking each self-attention cell with its own set of weights and running it in parallel***. Therefore, if the sequence data gets more complex, it will ensure that the model can capture more complex and richer relationships between each sequence data. The stacking of multiple self-attention cells is called **`“Multi-Head Attention”`**.
             - The default amount in its original paper is 8 self-attention cells for one multi-head attention layer.
@@ -55,7 +55,7 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
         - The **skip residual connection** makes the transformer **more handy to train the more complex model**.
     - Encoder-Decoder Attention
         - To keep track of the relationship **between input and output phrases** and **ensure that the important sequence data is not lost during inference**, the transformer has a layer named encoder-decoder attention.
-        - For instance, we have a sequence of words: **`“Don’t throw the trash anywhere”`.** There is an important word in that sentence: `"**Don't"`.**  If the decoder doesn’t track this word during translation, the result and meaning can be utterly different.
+        - For instance, we have a sequence of words: **`“Don’t throw the trash anywhere”`.** There is an important word in that sentence: **`"Don't"`**.  If the decoder doesn’t track this word during translation, the result and meaning can be utterly different.
         - The calculation mechanism is **based on self-attention**. It also calculates the similarity to get the relationship between sequence data, but the **similarity calculation** **is now focused on how the output sequence data (decoder part) is related to each of the input sequence data (encoder part)**.
         - As in the self-attention cell, **each encoder-decoder attention cell keeps the same shared weight value**, which makes the transformer flexible with different lengths of inputs and outputs. And **it can be stacked as well**.
     - Norm Layer
@@ -64,7 +64,6 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
         - To make the transformer **able to fit more complicated data by adding more parameters (weights and biases)**, we can **add the Feed Forward or Fully Connected Layers** to both the encoder and decoder parts.
 
 ### References
--   [https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
--   [https://developer.nvidia.com/blog/cuda-refresher-reviewing-the-origins-of-gpu-computing/](https://developer.nvidia.com/blog/cuda-refresher-reviewing-the-origins-of-gpu-computing/)
--   ****William Horton, CUDA in your Python: Effective Parallel Programming on the GPU, PyCon 2019****
--   Parallel Programming for Multicore and Cluster Systems, CSC447, [https://harmanani.github.io/classes/csc447/Notes/Lecture15.pdf](https://harmanani.github.io/classes/csc447/Notes/Lecture15.pdf)
+-   Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30 (2017)
+-   ****StatQuest, Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!****
+-   The Illustrated Transformers, [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/)
