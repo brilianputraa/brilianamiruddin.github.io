@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Machine Learning/머신러닝] Transformers (트랜스포머): Attention Is All You Need (Neurips 2017)"
+title: "[Machine Learning/머신러닝] Transformers (트랜스포머): Attention Is All You Need (NeurIPS 2017)"
 toc: true
 mathjax: true
 categories: study-log
