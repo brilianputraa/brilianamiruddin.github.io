@@ -55,15 +55,19 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
             
  - We can also think of self-attention as a cell. ***By stacking each self-attention cell with its own set of weights and running it in parallel***. Therefore, if the sequence data gets more complex, it will ensure that the model can capture more complex and richer relationships between each sequence data. The stacking of multiple self-attention cells is called **`“Multi-Head Attention”`**.
       - The default amount in its original paper is 8 self-attention cells for one multi-head attention layer.
+
 ### Residual Connections 🛣️
  - The **skip residual connection** makes the transformer **more handy to train the more complex model**.
+
 ### Encoder-Decoder Attention 🌉
  - To keep track of the relationship **between input and output phrases** and **ensure that the important sequence data is not lost during inference**, the transformer has a layer named encoder-decoder attention.
  - For instance, we have a sequence of words: **`“Don’t throw the trash anywhere”`.** There is an important word in that sentence: **`"Don't"`**.  If the decoder doesn’t track this word during translation, the result and meaning can be utterly different.
  - The calculation mechanism is **based on self-attention**. It also calculates the similarity to get the relationship between sequence data, but the **similarity calculation** **is now focused on how the output sequence data (decoder part) is related to each of the input sequence data (encoder part)**.
  - As in the self-attention cell, **each encoder-decoder attention cell keeps the same shared weight value**, which makes the transformer flexible with different lengths of inputs and outputs. And **it can be stacked as well**.
+
 ### Norm Layer ➗
  - As the size of the input and output **sequence data becomes longer and larger, the scalability problem arises**. Thus, to scale and make the transformer work with that longer sequence, we **need to normalize the values after every step of the layer** **by adding the norm layer**.
+
 ### Additional Layers (Fully Connected Layers) 📚
 - To make the transformer **able to fit more complicated data by adding more parameters (weights and biases)**, we can **add the Feed Forward or Fully Connected Layers** to both the encoder and decoder parts.
 
