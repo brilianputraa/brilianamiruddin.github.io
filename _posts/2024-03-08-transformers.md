@@ -27,6 +27,7 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
             - **`The periodicity of the functions:`** it ****ensures that the encoding stays relevant for different sequence lengths.
             - **`To avoid confusion for the model:`** we can use multiple frequencies to ensure that the different positions have distinct and unique encoded values. This also helps to prevent confusion because of the aliasing.
             - **`Easy to extrapolate:`** for the long sequences, which might be longer than the data length that the model encountered during training, both functions allow the model to easily extrapolate for the longer sequences.
+
 ### Self-Attention ‼️
  - **The relationship between each sequence of data is also important**. In text data such as sentences, sometimes there is a word that refers to or relates to another word. If the information about the relationship between each word disappears, the data's meaning will also change.
     - **`“We cooked the fried rice with a wok, and it smelled really good.”`** → **`“it”`** in this sentence refers to **`“fried rice**"`  even though a wok can smell good as well, but that is not the word that word **`“it”`** refers to.
