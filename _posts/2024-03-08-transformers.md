@@ -11,6 +11,7 @@ tags: [machine learning,sequence modeling,deep learning,gpu]
 # Transformer (트랜스포머)
 
 ![transformer_illustrated.png](/assets/fig/transformer_illustrated.png)
+*Transformers Architecture, from Illustrated Transformer*
 
 The **`Transformer model ditches the need for recurrent and convolution layers`** in sequence modeling entirely by relying solely on **`attention mechanisms`**.
 The transformer model has **two components**: **the encoder** and **the decoder**, which is similar to **the Seq2Seq model**.
@@ -48,6 +49,8 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
             - For each sequence of data, the **set of weights inside the Query, Value, and Key will be reused, so it will be the same**. Due to this good characteristic, **the transformer has the advantage that it can be parallelized**.
             
             ![Attentionisallyouneed.png](/assets/fig/Attentionisallyouneed.png)
+
+          *Multi-Head Attention, from Attention Is All You Need*
             
         - We can also think of self-attention as a cell. ***By stacking each self-attention cell with its own set of weights and running it in parallel***. Therefore, if the sequence data gets more complex, it will ensure that the model can capture more complex and richer relationships between each sequence data. The stacking of multiple self-attention cells is called **`“Multi-Head Attention”`**.
             - The default amount in its original paper is 8 self-attention cells for one multi-head attention layer.
