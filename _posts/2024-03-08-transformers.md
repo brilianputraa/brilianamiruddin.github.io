@@ -1,118 +1,70 @@
 ---
 layout: post
-title: "[Programming/프로그램잉] GPU Programming in Python: CUDA Introduction"
+title: "[Machine Learning/머신러닝] Transformers (트랜스포머): Attention Is All You Need (Neurips 2017)"
 toc: true
 mathjax: true
 categories: study-log
 author:
   - Brilian Putra Amiruddin
-tags: [parallel programming,python,cuda,gpu]
+tags: [machine learning,sequence modeling,deep learning,gpu]
 --- 
-# GPU Programming in Python: CUDA Introduction
+# Transformer (트랜스포머)
 
-## Why GPU? ⚡
+![transformer_illustrated.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4ecb7968-bd5c-4f68-b0d1-9c4479fb7064/f0f802f9-b077-4ffe-9bd7-7662a454d6f5/Untitled.png)
 
-**GPUs are typically faster than CPUs for computation-intensive tasks that can be divided into smaller, independent tasks that can be executed concurrently**. GPUs have a significantly larger number of cores compared to CPUs, allowing them to work together efficiently and share data and resources for optimal performance.
-
-On the other hand, CPUs are designed for general-purpose computing and excel at sequential tasks where instructions are executed one at a time. They are well-suited for tasks that involve complex logic and decision-making but are less efficient for parallelizable tasks.
-
-While GPUs are commonly used for accelerating graphics processing, such as rendering images and videos by manipulating large amounts of data, they are increasingly utilized for other computation-intensive tasks like scientific computing, machine learning, and artificial intelligence.
-
-``It is important to note that CPUs may still be more efficient for tasks that require complex logic or decision-making, and GPUs are not always the best choice.``
-
-![CPU vs GPU](/assets/fig/cpu_vs_gpu.png)
-
-## Ways to do CUDA GPU Programming in Python
-
-As we know, the basic approach of parallel programming using GPU is data parallelism
-
-_**We do the same operations on different subsets of the same data or different processors take different slices of the data but still do the same thing**_
-
-**Vector, Matrix, and Tensor** are usually the data types that apply to this data parallelism
-
-Before diving deeper into the CUDA API, let’s see the basic thread hierarchy of the CUDA programming paradigm
-
-![CUDA API prorgram archi.png](/assets/fig/block_thread_grid.png)
-
-The thread hierarchy can be represented by three components:
-
--   Thread
-    -   Executing the CUDA code
-    -   Having each **threadIdx** up to 3 dimensions
-    -   The **threadIdx** is utilized to specify which part of data we want to compute on
--   Block
-    -   Organizing the group of threads
-    -   Blocks execute independently
-    -   Block index (**blockIdx**) and Block dimension (**blockDim**) can be indexed up to 3 dimensions
-    -   Threads within a block can communicate and share data with each other (via shared memory)
-    -   **However, the block cannot share its data with the other blocks!**
--   Grid
-    -   Group of blocks
-
-### How does CUDA work across the CPU and GPU?
-
--   There are two terms in the communication between CPU and GPU
-    -   CPU is called **Host**
-    -   GPU is called **Device**
-
-The host will act as the one that performs logic operations to obtain the data once it is ready to be processed. The host sends it to the device to perform parallel computational operations there.
-
-To specify whether the code that we are going to run is running on the host or device, we can define all these things with **CUDA Kernels**. CUDA Kernels are the C/C++ code with additional syntax to determine that we are executing our code on the device. A kernel is defined using the ****global**** and called using **<<<….>>>** execution configuration syntax.
-
-```cpp
-// Kernel definition
-__global__ void VecAdd(float* A, float* B, float* C)
-{
-    int i = threadIdx.x;
-    C[i] = A[i] + B[i];
-}
-
-int main()
-{
-    ...
-    // Kernel invocation with N threads
-    VecAdd<<<1, N>>>(A, B, C);
-    ...
-}
-```
-
-### Compiling CUDA strings in Python 👣
-
-One of the libraries that can do this for us is PyCUDA
-
--   PyCUDA
-    -   Take strings of CUDA code and call it in Python
-    -   It automatically manages memory; if the object goes out of its lifetime, it will automatically clean it up
-    -   Data Transfer through In, Out, and InOut
-        -   Wrappers for data transfer from and to GPU (host)
-    -   Checking the errors on the CUDA code
-    -   Metaprogramming support to find better thread numbers, etc.
-
-### C/C++ Extension (Harder way 🎣)
-
--   PyTorch, TensorFlow, and another Deep Learning library wrap up the CUDA programming inside with the C++ extension
--   nvcc Compiler for CUDA to C/C++ by NVIDIA
-    -   nvcc will take CUDA C/C++ source code and compile the kernel to GPU assembly code
-    -   Replacing CUDA special syntax in the C/C++ code
--   Using Cython to generate a C++ class, then using setup tools to link everything
--   Or using Pybind to bind the Python code with the C++
--   We can manage our memory manually (for expert users)
--   There is also a compiler that can tell whether there is an error or not in the CUDA code!
-
-### Drop-in replacement (Where the magic comes 🧙🏻‍♂️!)
-
-If you don’t want to bother with the lower level of CUDA implementation, as you might already know, we have magic that can save us a lot of time! Yes, in Python, there are several libraries that will do magic for dealing with CUDA programming; we just need to specify the **JIT (Just In Time)** decorators in Numba or merely **import cuPy as cp** instead of **import numpy as np.** These are the libraries that support drop-in replacement in the Python language:
-
--   [Numba](https://numba.pydata.org/numba-doc/latest/index.html)
--   [cuPy](https://cupy.dev/)
--   cuDF
--   cuML
+The **`Transformer model ditches the need for recurrent and convolution layers`** in sequence modeling entirely by relying solely on **`attention mechanisms`**.
+The transformer model has **two components**: **the encoder** and **the decoder**, which is similar to **the Seq2Seq model**.
+For the input and output, in its **`“Attention is All You Need”`** paper, the transformer utilizes the embedding layers.
+- Layers inside the transformer:
+    - Positional Encoding
+        - Order in the sequence is important, as the order of the data matters to the context.
+            - **`“sequence model is awesome.”`** → Looks good
+            - **`“sequence model awesome is.”`** → Looks weird
+        - **To capture the relative or absolute position information of the sequence data**, the transformer model **utilizes sine and cosine functions to encode the positional information** of each data point.
+        - The reasons to use sine and cosine functions are:
+            - **`Both functions bound the encoded value between -1 and 1:`** which makes the model more handy to process the information.
+            - **`The periodicity of the functions:`** it ****ensures that the encoding stays relevant for different sequence lengths.
+            - **`To avoid confusion for the model:`** we can use multiple frequencies to ensure that the different positions have distinct and unique encoded values. This also helps to prevent confusion because of the aliasing.
+            - **`Easy to extrapolate:`** for the long sequences, which might be longer than the data length that the model encountered during training, both functions allow the model to easily extrapolate for the longer sequences.
+    - Self-Attention
+        - **The relationship between each sequence of data is also important**. In text data such as sentences, sometimes there is a word that refers to or relates to another word. If the information about the relationship between each word disappears, the data's meaning will also change.
+            - **`“We cooked the fried rice with a wok, and it smelled really good.”`** → **`“it”`** in this sentence refers to **`“fried rice**"`  even though a wok can smell good as well, but that is not the word that word **`“it”`** refers to.
+        - Then, how can we give a relational context to the transformer model?
+            - That’s where self-attention plays a big role! (**Attention is all you need**)
+            - Self-attention **helps the transformer keep track of how each piece of sequence data within input or output relates to the others, including itself.**
+            - Self-attention has three key parts: **Query (Q)**, **Key (K), and Value (V)**.
+                - `Query:` representing the encoded value by multiplying it with another pair of weights.
+                - `Key:` value representation of other data sequences, including itself, for computing the similarity with the query.
+                    - The similarity is computed through the dot product. The larger the similarity value, the more similar the data is.
+                    - Then the similarity value goes through a Softmax layer.
+                - `Value:` another value representation of each data, the function is to multiply this value representation with the similarity value that has gone through the softmax layer and sum all of them together to get the self-attention value.
+                - From the paper, the **scaling factor** with the dimensions of Key in the dot product between Query and Key **assists the transformer in performing better with the larger sequence data**.
+                - Self-attention equation from the paper:
+                
+                $$
+                \text{Attention}(Q,K,V)=\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
+                $$
+                
+            - For each sequence of data, the **set of weights inside the Query, Value, and Key will be reused, so it will be the same**. Due to this good characteristic, **the transformer has the advantage that it can be parallelized**.
+            
+            ![Attentionisallyouneed.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4ecb7968-bd5c-4f68-b0d1-9c4479fb7064/af1ed855-bf5a-4679-85e7-2abdf4c54e81/Attentionisallyouneed.png)
+            
+        - We can also think of self-attention as a cell. ***By stacking each self-attention cell with its own set of weights and running it in parallel***. Therefore, if the sequence data gets more complex, it will ensure that the model can capture more complex and richer relationships between each sequence data. The stacking of multiple self-attention cells is called **`“Multi-Head Attention”`**.
+            - The default amount in its original paper is 8 self-attention cells for one multi-head attention layer.
+    - Residual Connections
+        - The **skip residual connection** makes the transformer **more handy to train the more complex model**.
+    - Encoder-Decoder Attention
+        - To keep track of the relationship **between input and output phrases** and **ensure that the important sequence data is not lost during inference**, the transformer has a layer named encoder-decoder attention.
+        - For instance, we have a sequence of words: **`“Don’t throw the trash anywhere”`.** There is an important word in that sentence: `"**Don't"`.**  If the decoder doesn’t track this word during translation, the result and meaning can be utterly different.
+        - The calculation mechanism is **based on self-attention**. It also calculates the similarity to get the relationship between sequence data, but the **similarity calculation** **is now focused on how the output sequence data (decoder part) is related to each of the input sequence data (encoder part)**.
+        - As in the self-attention cell, **each encoder-decoder attention cell keeps the same shared weight value**, which makes the transformer flexible with different lengths of inputs and outputs. And **it can be stacked as well**.
+    - Norm Layer
+        - As the size of the input and output **sequence data becomes longer and larger, the scalability problem arises**. Thus, to scale and make the transformer work with that longer sequence, we **need to normalize the values after every step of the layer** **by adding the norm layer**.
+    - Additional Layers (Fully Connected Layers)
+        - To make the transformer **able to fit more complicated data by adding more parameters (weights and biases)**, we can **add the Feed Forward or Fully Connected Layers** to both the encoder and decoder parts.
 
 ### References
 -   [https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
 -   [https://developer.nvidia.com/blog/cuda-refresher-reviewing-the-origins-of-gpu-computing/](https://developer.nvidia.com/blog/cuda-refresher-reviewing-the-origins-of-gpu-computing/)
 -   ****William Horton, CUDA in your Python: Effective Parallel Programming on the GPU, PyCon 2019****
 -   Parallel Programming for Multicore and Cluster Systems, CSC447, [https://harmanani.github.io/classes/csc447/Notes/Lecture15.pdf](https://harmanani.github.io/classes/csc447/Notes/Lecture15.pdf)
-
-
-> Written with [StackEdit](https://stackedit.io/).
