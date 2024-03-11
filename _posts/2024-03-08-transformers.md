@@ -73,7 +73,7 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
 
 ### References
 -   Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30 (2017)
--   **StatQuest, Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!**
+-   **StatQuest, "Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!"**
 -   The Illustrated Transformers, [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/)
 
 
