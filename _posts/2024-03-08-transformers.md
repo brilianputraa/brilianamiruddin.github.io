@@ -38,7 +38,7 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
 	     - `Query:` representing the encoded value by multiplying it with another pair of weights.
          - `Key:` value representation of other data sequences, including itself, for computing the similarity with the query.
 	          - The similarity is computed through the dot product. The larger the similarity value, the more similar the data is.
-               - Then the similarity value goes through a Softmax layer.
+            - Then the similarity value goes through a Softmax layer.
           - `Value:` another value representation of each data, the function is to multiply this value representation with the similarity value that has gone through the softmax layer and sum all of them together to get the self-attention value.
            - From the paper, the **scaling factor** with the dimensions of Key in the dot product between Query and Key **assists the transformer in performing better with the larger sequence data**.
            - Self-attention equation from the paper:
@@ -73,7 +73,7 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
 
 ### References
 -   Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30 (2017)
--   ****StatQuest, Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!****
+-   **StatQuest, Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!**
 -   The Illustrated Transformers, [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/)
 
 
