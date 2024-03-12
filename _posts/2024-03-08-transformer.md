@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Machine Learning/머신러닝] Transformers (트랜스포머): Attention Is All You Need (NeurIPS 2017)"
+title: "[Machine Learning/머신러닝] Transformer (트랜스포머): Attention Is All You Need (NeurIPS 2017)"
 toc: true
 mathjax: true
 categories: study-log
@@ -20,17 +20,17 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
 ### Positional Encoding ⌖
 -  Order in the sequence is important, as the order of the data matters to the context.
 	- **`“sequence model is awesome.”`** → Looks good
-            - **`“sequence model awesome is.”`** → Looks weird
-        - **To capture the relative or absolute position information of the sequence data**, the transformer model **utilizes sine and cosine functions to encode the positional information** of each data point.
-        - The reasons to use sine and cosine functions are:
-            - **`Both functions bound the encoded value between -1 and 1:`** which makes the model more handy to process the information.
-            - **`The periodicity of the functions:`** it ****ensures that the encoding stays relevant for different sequence lengths.
-            - **`To avoid confusion for the model:`** we can use multiple frequencies to ensure that the different positions have distinct and unique encoded values. This also helps to prevent confusion because of the aliasing.
-            - **`Easy to extrapolate:`** for the long sequences, which might be longer than the data length that the model encountered during training, both functions allow the model to easily extrapolate for the longer sequences.
+   	- **`“sequence model awesome is.”`** → Looks weird
+- **To capture the relative or absolute position information of the sequence data**, the transformer model **utilizes sine and cosine functions to encode the positional information** of each data point.
+- The reasons to use sine and cosine functions are:
+    - **`Both functions bound the encoded value between -1 and 1:`** which makes the model more handy to process the information.
+    - **`The periodicity of the functions:`** it ensures that the encoding stays relevant for different sequence lengths.
+    - **`To avoid confusion for the model:`** we can use multiple frequencies to ensure that the different positions have distinct and unique encoded values. This also helps to prevent confusion because of the aliasing.
+    - **`Easy to extrapolate:`** for the long sequences, which might be longer than the data length that the model encountered during training, both functions allow the model to easily extrapolate for the longer sequences.
 
 ### Self-Attention ‼️
  - **The relationship between each sequence of data is also important**. In text data such as sentences, sometimes there is a word that refers to or relates to another word. If the information about the relationship between each word disappears, the data's meaning will also change.
-    - **`“We cooked the fried rice with a wok, and it smelled really good.”`** → **`“it”`** in this sentence refers to **`“fried rice**"`  even though a wok can smell good as well, but that is not the word that word **`“it”`** refers to.
+    - **`“We cooked the fried rice with a wok, and it smelled really good.”`** → **`“it”`** in this sentence refers to **`“fried rice"`**  even though a wok can smell good as well, but that is not the word that word **`“it”`** refers to.
  - Then, how can we give a relational context to the transformer model?
 	 - That’s where self-attention plays a big role! (**Attention is all you need**)
 	 - Self-attention **helps the transformer keep track of how each piece of sequence data within input or output relates to the others, including itself.**
