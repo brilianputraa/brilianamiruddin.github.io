@@ -40,8 +40,8 @@ For the input and output, in its **`“Attention is All You Need”`** paper, th
 	          - The similarity is computed through the dot product. The larger the similarity value, the more similar the data is.
             - Then the similarity value goes through a Softmax layer.
           - `Value:` another value representation of each data, the function is to multiply this value representation with the similarity value that has gone through the softmax layer and sum all of them together to get the self-attention value.
-           - From the paper, the **scaling factor** with the dimensions of Key in the dot product between Query and Key **assists the transformer in performing better with the larger sequence data**.
-           - Self-attention equation from the paper:
+          - From the paper, the **scaling factor** with the dimensions of Key in the dot product between Query and Key **assists the transformer in performing better with the larger sequence data**.
+          - Self-attention equation from the paper:
                 
               $$
               \text{Attention}(Q,K,V)=\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
