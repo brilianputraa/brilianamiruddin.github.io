@@ -14,7 +14,7 @@ A map of Korean mountains and national parks I've explored. Click on markers to 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 <noscript>
-<p><em>Map requires JavaScript. Mountains hiked: Geumjeongsan, Bukhansan, Seoraksan.</em></p>
+<p><em>Map requires JavaScript. Mountains hiked: Geumjeongsan, Bukhansan, Seoraksan, Hallyeohaesang, Byeonsanbando.</em></p>
 </noscript>
 
 <style>
@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
     {n:"Juwangsan", lat:36.397, lng:129.143},
     {n:"Namsan (Gyeongju)", lat:35.838, lng:129.208},
     {n:"Woraksan", lat:36.783, lng:128.208},
+    {n:"Hallyeohaesang", lat:34.85, lng:128.43, h:true},
+    {n:"Byeonsanbando", lat:35.68, lng:126.58, h:true},
     // Not hiked - excluded parks
     {n:"Sobaeksan", lat:36.977, lng:128.383, ex:true},
     {n:"Songnisan", lat:36.577, lng:127.883, ex:true},
@@ -142,6 +144,8 @@ document.addEventListener('DOMContentLoaded', function() {
 - Seoraksan (Gangwon) - To add date
 - Cheonggyesan (Seoul) - To add date
 - Jangtaesan (Daejeon) - To add date
+- Hallyeohaesang (Tongyeong/Yeosu) - To add date
+- Byeonsanbando (Jeollabuk-do) - To add date
 
 **National Parks to explore:**
 
