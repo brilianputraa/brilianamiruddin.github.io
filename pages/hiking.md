@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof TRAILS !== 'undefined') {
     var trailStyle = {
       color: '#28a745',
-      weight: 3,
-      opacity: 0.7,
-      dashArray: '10, 5'
+      weight: 5,
+      opacity: 0.8,
+      dashArray: '12, 6'
     };
 
     Object.entries(TRAILS).forEach(function([key, trail]) {
