@@ -73,7 +73,7 @@ Research conducted at the <strong>Vehicle Intelligence and Autonomy Lab (ViaLab)
   <div class="project-content">
     <h3 class="project-title">AI-based AHU Energy Analysis</h3>
     <p class="project-subtitle">Aug 2025 - Present</p>
-    <p class="project-description">Predictive maintenance with CatBoost + RAG-LLM for anomaly detection and fault diagnosis.</p>
+    <p class="project-description">Digital twin using CatBoost to predict normal valve behavior based on environmental conditions, with RAG-LLM for fault diagnosis.</p>
     <div class="project-meta">
       <span class="project-tag">ML</span>
       <span class="project-tag">LLM</span>

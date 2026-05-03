@@ -13,15 +13,16 @@ Developing a **predictive maintenance system** for Air Handling Units (AHU) and 
 ## System Overview
 
 Integrated CatBoost machine learning model with RAG-LLM pipeline for:
-- **Anomaly Detection**: Real-time monitoring of sensor data for early warning signs
+- **Digital Twin (CatBoost)**: Predicts whether current valve openings are normal based on historical operational patterns, considering features like outdoor temperature, humidity, return temperature, and other sensor data
+- **Anomaly Detection**: Real-time comparison between predicted normal behavior and actual sensor readings
 - **Fault Diagnosis**: Automated analysis of potential causes when anomalies detected
 - **Predictive Alerts**: Proactive notifications before equipment failure
 
 ## Technologies
 
 ### Machine Learning & AI
-- **CatBoost**: Gradient boosting for energy consumption prediction and anomaly classification
-- **RAG/LLM Pipeline (Qdrant)**: Knowledge retrieval for fault diagnosis and maintenance recommendations
+- **CatBoost (Digital Twin)**: Gradient boosting model trained on historical data to predict expected normal valve positions based on current environmental conditions (outdoor temperature, humidity, return temperature, supply temperature, etc.)
+- **RAG/LLM Pipeline (Qdrant)**: Knowledge retrieval for fault diagnosis and maintenance recommendations when digital twin detects deviations from expected behavior
 - **Vector Database**: Historical maintenance logs and equipment manuals indexed for quick retrieval
 
 ### Data Infrastructure
