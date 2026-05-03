@@ -6,6 +6,35 @@
   margin: 1.5rem 0 2rem 0;
 }
 
+// Trail colors integrated with theme
+:root {
+  --trail-color: #28a745;
+  --trail-hover: #34ce57;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --trail-color: #2d8a3e;
+    --trail-hover: #3da94e;
+  }
+}
+
+// Trail polyline styles for Leaflet
+.trail-polyline {
+  stroke: var(--trail-color);
+  stroke-width: 3;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 10, 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.trail-polyline:hover {
+  stroke: var(--trail-hover);
+  stroke-width: 4;
+}
+
 .project-card {
   display: block;
   background: var(--bg-color, #fff);

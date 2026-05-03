@@ -1,7 +1,7 @@
 title: Reifion
 description: Brilian Putra Amiruddin's Personal Website
 author: Brilian Putra Amiruddin
-avatar: /me.jpg
+avatar: /assets/images/me.jpg
 email: brilianamiruddin@pusan.ac.kr
 
 plugins:
@@ -12,12 +12,16 @@ plugins:
 
 paginate: 5
 
+# Include pages folder
+include:
+  - pages
+
 # Uncomment the below line and set the tracking ID for enabling Google Analytics
-# 
-# google_analytics: 
+#
+# google_analytics:
 
 # Uncomment the below lines and set the Disqus shortname for enabling Disqus
-# 
+#
 disqus:
   shortname: reifion
 url: https://brilianputraa.netlify.app/
@@ -29,6 +33,12 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: "pages"
+    values:
+      layout: "page"
 
 # Jekyll
 # ======

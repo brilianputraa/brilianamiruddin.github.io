@@ -12,6 +12,7 @@ A map of Korean mountains and national parks I've explored. Click on markers to 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="{{ '/assets/js/trails.js' | relative_url }}"></script>
 
 <noscript>
 <p><em>Map requires JavaScript. Mountains hiked: Geumjeongsan, Bukhansan, Seoraksan, Hallyeohaesang, Byeonsanbando, Jirisan, Hallasan, Gayasan, Mudeungsan, Taebaeksan, Deogyusan, Juwangsan, Namsan (Gyeongju), Woraksan.</em></p>
@@ -120,6 +121,22 @@ document.addEventListener('DOMContentLoaded', function() {
     L.marker([m.lat, m.lng], {icon: icon}).addTo(map)
       .bindPopup(popupContent);
   });
+
+  // Add coastal trail polylines
+  if (typeof TRAILS !== 'undefined') {
+    var trailStyle = {
+      color: '#28a745',
+      weight: 3,
+      opacity: 0.7,
+      dashArray: '10, 5'
+    };
+
+    Object.entries(TRAILS).forEach(function([key, trail]) {
+      L.polyline(trail.coords, trailStyle)
+        .bindPopup('<strong>' + trail.name + '</strong><br><small>' + trail.desc + '</small>')
+        .addTo(map);
+    });
+  }
 });
 </script>
 
@@ -135,6 +152,12 @@ document.addEventListener('DOMContentLoaded', function() {
 .marker-hiked { background: #28a745; border-color: #fff; }
 .marker-explore { background: #0366d6; border-color: #fff; }
 .marker-excluded { background: #d1d5da; border-color: #d1d5da; opacity: 0.6; }
+
+/* Trail polyline styles */
+.leaflet-overlay-pane path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 </style>
 
 **Mountains I've hiked:**

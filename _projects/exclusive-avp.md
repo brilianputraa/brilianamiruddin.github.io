@@ -21,7 +21,8 @@ Developed autonomous parking system using **linear MPC algorithm** with structur
 
 ### Parking Management
 - **Structured Parking Management**: System for organizing and allocating parking slots
-- **Slot Detection**: Vision-based identification of available parking spaces
+- **Slot Selection**: App-based selection of target parking spaces (empty spaces intentionally designated)
+- **Localization**: Google Cartographer-based positioning (external implementation)
 - **Approach Planning**: Optimized trajectories for parking entry
 
 ## Implementation Details
