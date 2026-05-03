@@ -100,6 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
     {% endfor %}
   };
 
+  // Store markers for later access (zoom on click)
+  window.mountainMarkers = {};
+
   // Icons with larger touch targets (18px for mobile)
   mountains.forEach(function(m) {
     var status = m.h ? 'Hiked' : (m.ex ? 'Not visited' : 'To explore');
@@ -118,9 +121,23 @@ document.addEventListener('DOMContentLoaded', function() {
       popupContent = '<a href="' + hikeData[m.n].photo + '" data-lightbox="hikes" data-title="' + m.n + '" style="display:block;text-decoration:none;"><img src="' + hikeData[m.n].photo + '" style="width:200px;height:150px;object-fit:cover;border-radius:12px;display:block;margin:0 auto 8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><strong style="display:block;text-align:center;font-size:16px;color:#222;">' + m.n + '</strong></a>';
     }
     
-    L.marker([m.lat, m.lng], {icon: icon}).addTo(map)
+    var marker = L.marker([m.lat, m.lng], {icon: icon}).addTo(map)
       .bindPopup(popupContent);
+    
+    // Store marker with sanitized name as key
+    var key = m.n.replace(/\s+/g, '-').replace(/[()]/g, '').toLowerCase();
+    window.mountainMarkers[key] = marker;
   });
+
+  // Function to zoom to a specific mountain
+  window.zoomToMountain = function(name) {
+    var key = name.replace(/\s+/g, '-').replace(/[()]/g, '').toLowerCase();
+    if (window.mountainMarkers && window.mountainMarkers[key]) {
+      var marker = window.mountainMarkers[key];
+      map.setView(marker.getLatLng(), 12);
+      marker.openPopup();
+    }
+  };
 
   // Add coastal trail polylines
   if (typeof TRAILS !== 'undefined') {
@@ -131,12 +148,25 @@ document.addEventListener('DOMContentLoaded', function() {
       dashArray: '12, 6'
     };
 
+    // Store polylines for later access (zoom on click)
+    window.trailPolylines = {};
+
     Object.entries(TRAILS).forEach(function([key, trail]) {
-      L.polyline(trail.coords, trailStyle)
+      var polyline = L.polyline(trail.coords, trailStyle)
         .bindPopup('<strong>' + trail.name + '</strong><br><small>' + trail.desc + '</small>')
         .addTo(map);
+      window.trailPolylines[key] = polyline;
     });
   }
+
+  // Function to zoom to a specific trail
+  window.zoomToTrail = function(trailKey) {
+    if (window.trailPolylines && window.trailPolylines[trailKey]) {
+      var polyline = window.trailPolylines[trailKey];
+      map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
+      polyline.openPopup();
+    }
+  };
 });
 </script>
 
@@ -158,26 +188,39 @@ document.addEventListener('DOMContentLoaded', function() {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Clickable mountain/trail links */
+#post-content a[href="#"] {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px dotted var(--link-base-color, #003be4);
+}
+
+#post-content a[href="#"]:hover {
+  color: var(--link-base-color, #003be4);
+  border-bottom-style: solid;
+}
 </style>
 
 **Mountains I've hiked:**
 
-- Geumjeongsan (Busan) - January 2025
-- Bukhansan (Seoul) - To add date
-- Seoraksan (Gangwon) - To add date
-- Cheonggyesan (Seoul) - To add date
-- Jangtaesan (Daejeon) - To add date
-- Hallyeohaesang (Tongyeong/Yeosu) - To add date
-- Byeonsanbando (Jeollabuk-do) - To add date
-- Jirisan - To add date
-- Hallasan - To add date
-- Gayasan - To add date
-- Mudeungsan - To add date
-- Taebaeksan - To add date
-- Deogyusan - To add date
-- Juwangsan - To add date
-- Namsan (Gyeongju) - To add date
-- Woraksan - To add date
+- <a href="#" onclick="zoomToMountain('Geumjeongsan'); return false;">Geumjeongsan (Busan)</a> - January 2025
+- <a href="#" onclick="zoomToMountain('Bukhansan'); return false;">Bukhansan (Seoul)</a> - To add date
+- <a href="#" onclick="zoomToMountain('Seoraksan'); return false;">Seoraksan (Gangwon)</a> - To add date
+- <a href="#" onclick="zoomToMountain('Cheonggyesan'); return false;">Cheonggyesan (Seoul)</a> - To add date
+- <a href="#" onclick="zoomToMountain('Jangtaesan Daejeon'); return false;">Jangtaesan (Daejeon)</a> - To add date
+- <a href="#" onclick="zoomToMountain('Hallyeohaesang'); return false;">Hallyeohaesang (Tongyeong/Yeosu)</a> - To add date
+- <a href="#" onclick="zoomToMountain('Byeonsanbando'); return false;">Byeonsanbando (Jeollabuk-do)</a> - To add date
+- <a href="#" onclick="zoomToMountain('Jirisan'); return false;">Jirisan</a> - To add date
+- <a href="#" onclick="zoomToMountain('Hallasan'); return false;">Hallasan</a> - To add date
+- <a href="#" onclick="zoomToMountain('Gayasan'); return false;">Gayasan</a> - To add date
+- <a href="#" onclick="zoomToMountain('Mudeungsan'); return false;">Mudeungsan</a> - To add date
+- <a href="#" onclick="zoomToMountain('Taebaeksan'); return false;">Taebaeksan</a> - To add date
+- <a href="#" onclick="zoomToMountain('Deogyusan'); return false;">Deogyusan</a> - To add date
+- <a href="#" onclick="zoomToMountain('Juwangsan'); return false;">Juwangsan</a> - To add date
+- <a href="#" onclick="zoomToMountain('Namsan Gyeongju'); return false;">Namsan (Gyeongju)</a> - To add date
+- <a href="#" onclick="zoomToMountain('Woraksan'); return false;">Woraksan</a> - To add date
 
 **Not visited yet:**
 
@@ -191,15 +234,15 @@ Korea has an extensive network of long-distance coastal trails. I've completed s
 
 **Haeparanggil (East Sea Trail)** - Total 770km along Korea's eastern coastline
 
-- ✅ Course 1: Busan (Songjeong → Haeundae)
-- ✅ Course 2: Busan (Haeundae → Dongnae)
-- ✅ Course 3: Busan (Dongnae → Gijang)
-- ✅ Course 4: Busan/Gijang (Gijang → Jangsan)
+- ✅ <a href="#" onclick="zoomToTrail('hae1'); return false;">Course 1: Busan (Songjeong → Haeundae)</a>
+- ✅ <a href="#" onclick="zoomToTrail('hae2'); return false;">Course 2: Busan (Haeundae → Dongnae)</a>
+- ✅ <a href="#" onclick="zoomToTrail('hae3'); return false;">Course 3: Busan (Dongnae → Gijang)</a>
+- ✅ <a href="#" onclick="zoomToTrail('hae4'); return false;">Course 4: Busan/Gijang (Gijang → Jangsan)</a>
 - Remaining: Courses 5-20 (Ulsan → Gangwon → Sokcho)
 
 **Namparanggil (South Sea Trail)** - Total 1,463km along Korea's southern coastline
 
-- ✅ Course 2: Busan (Yeongdo → Nampo-dong)
-- ✅ Course 4: Busan (Songjeong → Dadaepo)
-- ✅ Course 5: Busan/Changwon (Dadaepo → Jinhae)
+- ✅ <a href="#" onclick="zoomToTrail('nam2'); return false;">Course 2: Busan (Yeongdo → Nampo-dong)</a>
+- ✅ <a href="#" onclick="zoomToTrail('nam4'); return false;">Course 4: Busan (Songjeong → Dadaepo)</a>
+- ✅ <a href="#" onclick="zoomToTrail('nam5'); return false;">Course 5: Busan/Changwon (Dadaepo → Jinhae)</a>
 - Remaining: Courses 1, 3, 6-21 (Mokpo → Tongyeong → Busan)
