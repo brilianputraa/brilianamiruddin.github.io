@@ -13,7 +13,8 @@ Research conducted at the <strong>Vehicle Intelligence and Autonomy Lab (ViaLab)
 <div class="projects-grid">
 
 <a href="/projects/nudrl-mpc/" class="project-card">
-  <div class="project-thumbnail" style="background: linear-gradient(135deg, #1a1a2e 0%, #4a4e69 100%);">
+  <div class="project-thumbnail">
+    <img src="/assets/projects/nudrl-mpc.png" alt="NUDRL-MPC">
   </div>
   <div class="project-content">
     <h3 class="project-title">NUDRL-MPC</h3>
