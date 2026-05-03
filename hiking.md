@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {n:"Geumjeongsan", lat:35.267, lng:129.05, h:true},
     {n:"Bukhansan", lat:37.658, lng:127.043, h:true},
     {n:"Seoraksan", lat:38.117, lng:128.467, h:true},
+    {n:"Cheonggyesan", lat:37.416, lng:127.041, h:true},
     {n:"Jirisan", lat:35.335, lng:127.733},
     {n:"Hallasan", lat:33.362, lng:126.533},
     {n:"Gayasan", lat:35.822, lng:128.135},
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {n:"Sinbulsan", lat:35.583, lng:129.183},
     {n:"Ganwolsan", lat:35.55, lng:129.25},
     {n:"Gwanaksan", lat:37.45, lng:127.017},
+    {n:"Jangtaesan (Daejeon)", lat:36.35, lng:127.35, h:true},
     {n:"Mireuksan", lat:36.333, lng:127.933},
     {n:"Daedunsan", lat:36.35, lng:127.333},
     {n:"Hwangnyeongsan", lat:35.183, lng:129.05},
@@ -138,6 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
 - Geumjeongsan (Busan) - January 2025
 - Bukhansan (Seoul) - To add date
 - Seoraksan (Gangwon) - To add date
+- Cheonggyesan (Seoul) - To add date
+- Jangtaesan (Daejeon) - To add date
 
 **National Parks to explore:**
 
