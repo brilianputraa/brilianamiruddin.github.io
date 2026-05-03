@@ -154,3 +154,26 @@ document.addEventListener('DOMContentLoaded', function() {
 **Not visited yet:**
 
 - Sobaeksan, Songnisan, Odaesan, Wolchulsan, Palgongsan, Gyeryongsan, Chiaksan
+
+---
+
+## Trailing in Korea
+
+Korea has an extensive network of long-distance coastal trails. I've completed sections of two major southern coastal trails:
+
+**Haeparanggil (East Sea Trail)** - Total 770km along Korea's eastern coastline
+
+- ✅ Course 1: Busan (Songjeong → Haeundae)
+- ✅ Course 2: Busan (Haeundae → Dongnae)
+- ✅ Course 3: Busan (Dongnae → Gijang)
+- ✅ Course 4: Busan/Gijang (Gijang → Jangsan)
+- Remaining: Courses 5-20 (Ulsan → Gangwon → Sokcho)
+
+**Namparanggil (South Sea Trail)** - Total 1,463km along Korea's southern coastline
+
+- ✅ Course 2: Busan (Yeongdo → Nampo-dong)
+- ✅ Course 4: Busan (Songjeong → Dadaepo)
+- ✅ Course 5: Busan/Changwon (Dadaepo → Jinhae)
+- Remaining: Courses 1, 3, 6-21 (Mokpo → Tongyeong → Busan)
+
+More info: [Korea Trail Official Site](https://www.koreatrail.or.kr/)
