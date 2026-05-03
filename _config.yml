@@ -2,7 +2,7 @@ title: Reifion
 description: Brilian Putra Amiruddin's Personal Website
 author: Brilian Putra Amiruddin
 avatar: /me.jpg
-email: brilianpamiruddin@gmail.com
+email: brilianamiruddin@pusan.ac.kr
 
 plugins:
   - jekyll-seo-tag
@@ -18,7 +18,17 @@ paginate: 5
 
 # Uncomment the below lines and set the Disqus shortname for enabling Disqus
 # 
-# disqus:
+disqus:
+  shortname: reifion
+url: https://brilianputraa.netlify.app/
+
+collections:
+  hikes:
+    output: true
+    permalink: /hikes/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 # Jekyll
 # ======
@@ -26,6 +36,7 @@ exclude:
   - scripts/
   - README.md
   - jekyll-theme-hamilton.gemspec
+  - vendor/bundle/
 
 # Jekyll SEO Tag (Optional)
 # =========================

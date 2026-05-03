@@ -1,5 +1,7 @@
 html {
   font-size: $base-font-size;
+  height: 100vh;
+  overflow: hidden;
 
   @include media-query($on-small) {
     @include relative-font-size(0.89);
@@ -38,7 +40,9 @@ body {
           font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
   flex-direction: column;
   overflow-wrap: break-word;
   line-height: $base-line-height;
@@ -97,6 +101,11 @@ a {
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
   }
 }
 
