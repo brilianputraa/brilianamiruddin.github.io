@@ -27,11 +27,24 @@
   position: absolute;
   top: 3px;
   left: $spacing-unit / 2;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 
   img {
     width: $base-font-size * 2.5;
     height: auto;
     border-radius: 50%;
+  }
+
+  i {
+    font-size: $base-font-size * 1.5;
+  }
+
+  &:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
   }
 
   @media screen and (min-width: $on-small) {
@@ -182,6 +195,7 @@
 .site-body {
   display: grid;
   grid-template-columns: calc(#{$content-width} * 0.24) 1fr;
+  grid-template-rows: 1fr;
   overflow: hidden;
 
   @include media-query($on-medium) {
@@ -200,6 +214,8 @@
   padding: $spacing-unit;
   border-right: 1px solid;
   @include relative-font-size(0.8);
+  min-height: 0; // Required for overflow to work in CSS Grid
+  overflow-y: auto; // Allow sidebar to scroll if content is too long
 
   @include media-query($on-medium) {
     padding: $spacing-unit / 2;
@@ -322,6 +338,7 @@ ul.social-icons {
 .site-main {
   flex: 1 0 auto;
   overflow-y: scroll;
+  min-height: 0; // Required for overflow to work in CSS Grid
 
   // Hide scrollbar for IE, Edge and Firefox
   -ms-overflow-style: none;  // IE and Edge
