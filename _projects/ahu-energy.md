@@ -2,7 +2,7 @@
 title: AI-based AHU Energy Analysis
 subtitle: Predictive Maintenance for Air Handling Units
 layout: project
-date: 2025-08
+date: 2025-08-01
 gradient: linear-gradient(135deg, #00b894 0%, #00cec9 100%)
 tags: [ML, LLM, RAG, Predictive Maintenance, IoT]
 organization: Daewoong ENG

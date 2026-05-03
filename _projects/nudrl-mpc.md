@@ -2,8 +2,8 @@
 title: NUDRL-MPC
 subtitle: Deep Reinforcement Learning-Guided Non-Uniform Model Predictive Control
 layout: project
-date: 2024-03
-end_date: 2024-12
+date: 2024-03-01
+end_date: 2024-12-01
 thumbnail: /assets/projects/nudrl-mpc.png
 gradient: linear-gradient(135deg, #1a1a2e 0%, #4a4e69 100%)
 tags: [MPC, Deep RL, Control, Low-Speed, Autonomous Driving]

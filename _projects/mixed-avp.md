@@ -2,8 +2,8 @@
 title: Mixed Traffic AVP
 subtitle: Automated Valet Parking in Mixed Traffic Conditions
 layout: project
-date: 2023-08
-end_date: 2024-02
+date: 2023-08-01
+end_date: 2024-02-01
 thumbnail: https://img.youtube.com/vi/MenUcENcZ2c/maxresdefault.jpg
 video: MenUcENcZ2c
 tags: [AVP, LiDAR, CenterPoint, ROS, MPC]

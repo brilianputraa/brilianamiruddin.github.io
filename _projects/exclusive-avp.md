@@ -2,8 +2,8 @@
 title: Exclusive Traffic AVP
 subtitle: Automated Valet Parking in Controlled Environment
 layout: project
-date: 2022-09
-end_date: 2023-07
+date: 2022-09-01
+end_date: 2023-07-01
 thumbnail: https://img.youtube.com/vi/KxvLOT3hLbA/maxresdefault.jpg
 video: KxvLOT3hLbA
 tags: [AVP, MPC, Parking, ROS]
