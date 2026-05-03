@@ -22,12 +22,21 @@ disqus:
   shortname: reifion
 url: https://brilianputraa.netlify.app/
 
+collections:
+  hikes:
+    output: true
+    permalink: /hikes/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
 # Jekyll
 # ======
 exclude:
   - scripts/
   - README.md
   - jekyll-theme-hamilton.gemspec
+  - vendor/bundle/
 
 # Jekyll SEO Tag (Optional)
 # =========================

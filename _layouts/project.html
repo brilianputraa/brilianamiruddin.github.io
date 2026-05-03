@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<article class="project-detail">
+  <header class="project-header">
+    <div class="project-hero" style="background: {{ page.gradient | default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }};">
+      {% if page.thumbnail %}
+      <img src="{{ page.thumbnail }}" alt="{{ page.title }}" loading="lazy">
+      {% endif %}
+    </div>
+    <div class="project-header-content">
+      <h1 class="project-title">{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <p class="project-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+      <div class="project-meta">
+        {% if page.date %}
+        <span class="project-date"><time>{{ page.date | date: "%B %Y" }}</time>{% if page.end_date %} – <time>{{ page.end_date | date: "%B %Y" }}</time>{% endif %}</span>
+        {% endif %}
+        {% if page.organization %}
+        <span class="project-org">{{ page.organization }}</span>
+        {% endif %}
+      </div>
+      {% if page.tags %}
+      <div class="project-tags">
+        {% for tag in page.tags %}
+        <span class="project-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.kudos %}
+  <aside class="project-kudos">
+    {{ page.kudos | markdownify }}
+  </aside>
+  {% endif %}
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  {% if page.github or page.paper or page.links %}
+  <footer class="project-links">
+    {% if page.github %}
+    <a href="{{ page.github }}" class="btn" target="_blank" rel="noopener">GitHub</a>
+    {% endif %}
+    {% if page.paper %}
+    <a href="{{ page.paper }}" class="btn" target="_blank" rel="noopener">Paper</a>
+    {% endif %}
+    {% if page.links %}
+    {% for link in page.links %}
+    <a href="{{ link.url }}" class="btn" target="_blank" rel="noopener">{{ link.label }}</a>
+    {% endfor %}
+    {% endif %}
+  </footer>
+  {% endif %}
+</article>
