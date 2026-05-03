@@ -1,0 +1,14 @@
+current directory: /Users/putra/brilianamiruddin.github.io/vendor/bundle/ruby/4.0.0/gems/wdm-0.2.0/ext/wdm
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+
+current directory: /Users/putra/brilianamiruddin.github.io/vendor/bundle/ruby/4.0.0/gems/wdm-0.2.0/ext/wdm
+make -j11 DESTDIR\= sitearchdir\=./.gem.20260503-60714-vtofts sitelibdir\=./.gem.20260503-60714-vtofts clean
+
+current directory: /Users/putra/brilianamiruddin.github.io/vendor/bundle/ruby/4.0.0/gems/wdm-0.2.0/ext/wdm
+make -j11 DESTDIR\= sitearchdir\=./.gem.20260503-60714-vtofts sitelibdir\=./.gem.20260503-60714-vtofts
+
+current directory: /Users/putra/brilianamiruddin.github.io/vendor/bundle/ruby/4.0.0/gems/wdm-0.2.0/ext/wdm
+make -j11 DESTDIR\= sitearchdir\=./.gem.20260503-60714-vtofts sitelibdir\=./.gem.20260503-60714-vtofts install
+
+current directory: /Users/putra/brilianamiruddin.github.io/vendor/bundle/ruby/4.0.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20260503-60714-vtofts sitelibdir\=./.gem.20260503-60714-vtofts clean
