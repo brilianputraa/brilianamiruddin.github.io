@@ -22,7 +22,7 @@ Developed an autonomous valet parking system operating in **mixed traffic condit
 
 ### Planning & Control
 - **Nonlinear MPC**: Model Predictive Control for dynamic obstacle avoidance and trajectory optimization
-- **Real-time Path Planning**: A* and Hybrid A* algorithms for parking slot approach
+- **Real-time Path Planning**: A* algorithm for parking slot approach
 - **Trajectory Optimization**: Smooth path generation considering vehicle kinematics
 
 ## Implementation Details
