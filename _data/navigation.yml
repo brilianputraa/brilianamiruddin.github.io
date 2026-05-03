@@ -4,6 +4,12 @@
   url: /publications/
 - title: Projects
   url: /projects/
+- title: Activities
+  sublinks:
+    - title: Hiking
+      url: /hiking/
+    - title: Traveling
+      url: /traveling/
 - title: More
   sublinks:
     - title: Years

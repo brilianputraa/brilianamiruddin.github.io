@@ -1,0 +1,27 @@
+# Travel gallery - best photos from travels
+# Add hike photos here only if they're showcase-worthy
+
+- path: /assets/photos/mountain-view.jpg
+  alt: Mountain view from hiking trail
+  location: Seoraksan, Korea
+  date: 2024-10-15
+- path: /assets/photos/city-sunset.jpg
+  alt: City skyline at sunset
+  location: Busan, Korea
+  date: 2025-01-20
+- path: /assets/photos/forest-path.jpg
+  alt: Walking path through forest
+  location: Naejangsan, Korea
+  date: 2024-11-05
+- path: /assets/photos/ocean-waves.jpg
+  alt: Ocean waves at beach
+  location: Haeundae Beach, Busan
+  date: 2025-02-10
+- path: /assets/photos/flower-garden.jpg
+  alt: Colorful flowers in garden
+  location: Seoul, Korea
+  date: 2024-04-20
+- path: /assets/photos/night-stars.jpg
+  alt: Night sky with stars
+  location: Gangwon-do, Korea
+  date: 2024-08-15
