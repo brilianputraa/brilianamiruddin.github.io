@@ -175,5 +175,3 @@ Korea has an extensive network of long-distance coastal trails. I've completed s
 - ✅ Course 4: Busan (Songjeong → Dadaepo)
 - ✅ Course 5: Busan/Changwon (Dadaepo → Jinhae)
 - Remaining: Courses 1, 3, 6-21 (Mokpo → Tongyeong → Busan)
-
-More info: [Korea Trail Official Site](https://www.koreatrail.or.kr/)
