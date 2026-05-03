@@ -17,7 +17,7 @@ Developed an autonomous valet parking system operating in **mixed traffic condit
 ### Perception & Localization
 - **Dual LiDAR System**: VLP-16 and OS1-64 sensors integrated for robust environment perception
 - **Virtual Laser Scan**: Innovative approach for parking lot road sign detection
-- **AMCL Localization**: Adaptive Monte Carlo Localization for robust position estimation in unstructured parking environments
+- **AMCL Localization**: **Improved standard ROS AMCL package by implementing Ackermann motion model** (from probabilistic robotics) for **four-wheeled car-like vehicles**, replacing the default differential drive-only support. Also integrated **road marker detection using dual LiDARs** for enhanced localization accuracy in unstructured parking environments
 - **CenterPoint 3D Object Detection**: Deep learning-based detection for vehicles, pedestrians, and obstacles
 
 ### Planning & Control

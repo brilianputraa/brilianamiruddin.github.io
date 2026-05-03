@@ -34,7 +34,7 @@ Research conducted at the <strong>Vehicle Intelligence and Autonomy Lab (ViaLab)
   <div class="project-content">
     <h3 class="project-title">Mixed Traffic AVP</h3>
     <p class="project-subtitle">Aug 2023 - Feb 2024</p>
-    <p class="project-description">Autonomous valet parking in mixed traffic with nonlinear MPC, dual LiDAR, CenterPoint 3D detection.</p>
+    <p class="project-description">Autonomous valet parking with improved AMCL (Ackermann model for 4-wheel vehicles), dual LiDAR, CenterPoint 3D detection.</p>
     <div class="project-meta">
       <span class="project-tag">AVP</span>
       <span class="project-tag">LiDAR</span>
