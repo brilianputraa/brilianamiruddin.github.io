@@ -14,7 +14,7 @@ A map of Korean mountains and national parks I've explored. Click on markers to 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 <noscript>
-<p><em>Map requires JavaScript. Mountains hiked: Geumjeongsan, Bukhansan, Seoraksan, Hallyeohaesang, Byeonsanbando.</em></p>
+<p><em>Map requires JavaScript. Mountains hiked: Geumjeongsan, Bukhansan, Seoraksan, Hallyeohaesang, Byeonsanbando, Jirisan, Hallasan, Gayasan, Mudeungsan, Taebaeksan, Deogyusan, Juwangsan, Namsan (Gyeongju), Woraksan.</em></p>
 </noscript>
 
 <style>
@@ -54,16 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
     {n:"Bukhansan", lat:37.658, lng:127.043, h:true},
     {n:"Seoraksan", lat:38.117, lng:128.467, h:true},
     {n:"Cheonggyesan", lat:37.416, lng:127.041, h:true},
-    {n:"Jirisan", lat:35.335, lng:127.733},
-    {n:"Hallasan", lat:33.362, lng:126.533},
-    {n:"Gayasan", lat:35.822, lng:128.135},
-    {n:"Naejangsan", lat:35.493, lng:126.892},
-    {n:"Mudeungsan", lat:35.131, lng:127.022},
-    {n:"Taebaeksan", lat:37.083, lng:128.983},
-    {n:"Deogyusan", lat:35.857, lng:127.783},
-    {n:"Juwangsan", lat:36.397, lng:129.143},
-    {n:"Namsan (Gyeongju)", lat:35.838, lng:129.208},
-    {n:"Woraksan", lat:36.783, lng:128.208},
+    {n:"Jirisan", lat:35.335, lng:127.733, h:true},
+    {n:"Hallasan", lat:33.362, lng:126.533, h:true},
+    {n:"Gayasan", lat:35.822, lng:128.135, h:true},
+    {n:"Naejangsan", lat:35.493, lng:126.892, ex:true},
+    {n:"Mudeungsan", lat:35.131, lng:127.022, h:true},
+    {n:"Taebaeksan", lat:37.083, lng:128.983, h:true},
+    {n:"Deogyusan", lat:35.857, lng:127.783, h:true},
+    {n:"Juwangsan", lat:36.397, lng:129.143, h:true},
+    {n:"Namsan (Gyeongju)", lat:35.838, lng:129.208, h:true},
+    {n:"Woraksan", lat:36.783, lng:128.208, h:true},
     {n:"Hallyeohaesang", lat:34.85, lng:128.43, h:true},
     {n:"Byeonsanbando", lat:35.68, lng:126.58, h:true},
     // Not hiked - excluded parks
@@ -146,14 +146,19 @@ document.addEventListener('DOMContentLoaded', function() {
 - Jangtaesan (Daejeon) - To add date
 - Hallyeohaesang (Tongyeong/Yeosu) - To add date
 - Byeonsanbando (Jeollabuk-do) - To add date
-
-**National Parks to explore:**
-
-- Jirisan, Hallasan, Gayasan, Naejangsan, Mudeungsan, Taebaeksan, Deogyusan, Juwangsan, Namsan (Gyeongju), Woraksan
+- Jirisan - To add date
+- Hallasan - To add date
+- Gayasan - To add date
+- Mudeungsan - To add date
+- Taebaeksan - To add date
+- Deogyusan - To add date
+- Juwangsan - To add date
+- Namsan (Gyeongju) - To add date
+- Woraksan - To add date
 
 **Not visited yet:**
 
-- Sobaeksan, Songnisan, Odaesan, Wolchulsan, Palgongsan, Gyeryongsan, Chiaksan
+- Sobaeksan, Songnisan, Odaesan, Wolchulsan, Palgongsan, Gyeryongsan, Chiaksan, Naejangsan
 
 ---
 
