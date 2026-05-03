@@ -141,8 +141,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add coastal trail polylines
   if (typeof TRAILS !== 'undefined') {
-    var trailStyle = {
-      color: '#28a745',
+    // Different colors for each trail system
+    var haeStyle = {
+      color: '#0366d6',  // Blue for Haeparanggil (East Sea)
+      weight: 5,
+      opacity: 0.8,
+      dashArray: '12, 6'
+    };
+    var namStyle = {
+      color: '#28a745',  // Green for Namparanggil (South Sea)
       weight: 5,
       opacity: 0.8,
       dashArray: '12, 6'
@@ -152,7 +159,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.trailPolylines = {};
 
     Object.entries(TRAILS).forEach(function([key, trail]) {
-      var polyline = L.polyline(trail.coords, trailStyle)
+      var style = key.startsWith('hae') ? haeStyle : namStyle;
+      var polyline = L.polyline(trail.coords, style)
         .bindPopup('<strong>' + trail.name + '</strong><br><small>' + trail.desc + '</small>')
         .addTo(map);
       window.trailPolylines[key] = polyline;
@@ -232,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Korea has an extensive network of long-distance coastal trails. I've completed sections of two major southern coastal trails:
 
-**Haeparanggil (East Sea Trail)** - Total 770km along Korea's eastern coastline
+<span style="color:#0366d6;font-weight:bold;">■</span> **Haeparanggil (East Sea Trail)** - Total 770km along Korea's eastern coastline
 
 - ✅ <a href="#" onclick="zoomToTrail('hae1'); return false;">Course 1: Busan (Songjeong → Haeundae)</a>
 - ✅ <a href="#" onclick="zoomToTrail('hae2'); return false;">Course 2: Busan (Haeundae → Dongnae)</a>
@@ -240,7 +248,7 @@ Korea has an extensive network of long-distance coastal trails. I've completed s
 - ✅ <a href="#" onclick="zoomToTrail('hae4'); return false;">Course 4: Busan/Gijang (Gijang → Jangsan)</a>
 - Remaining: Courses 5-20 (Ulsan → Gangwon → Sokcho)
 
-**Namparanggil (South Sea Trail)** - Total 1,463km along Korea's southern coastline
+<span style="color:#28a745;font-weight:bold;">■</span> **Namparanggil (South Sea Trail)** - Total 1,463km along Korea's southern coastline
 
 - ✅ <a href="#" onclick="zoomToTrail('nam2'); return false;">Course 2: Busan (Yeongdo → Nampo-dong)</a>
 - ✅ <a href="#" onclick="zoomToTrail('nam4'); return false;">Course 4: Busan (Songjeong → Dadaepo)</a>
