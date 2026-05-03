@@ -28,7 +28,7 @@ The approach addresses **prediction horizon problems** while considering the veh
 
 Built using Python and PyTorch for the reinforcement learning component, integrated with MPC solver for real-time control. **Custom datasets were developed using Hybrid A* path planning algorithm** to generate realistic reference trajectories for training and evaluation in unstructured parking environments. The dataset is publicly accessible via the GitHub repository below.
 
-**My Contribution**: Path-Following Dataset with Multi-Level Difficulty for Autonomous Driving in Unstructured Roads - developed comprehensive benchmark datasets featuring varying complexity levels for robust controller validation.
+**Contributions**: Path-Following Dataset with Multi-Level Difficulty for Autonomous Driving in Unstructured Roads - developed comprehensive benchmark datasets featuring varying complexity levels for robust controller validation. Also contributed to the NUDRL-MPC algorithm design and implementation.
 
 ## Key Results
 
