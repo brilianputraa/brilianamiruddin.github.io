@@ -26,7 +26,7 @@ The approach addresses **prediction horizon problems** while considering the veh
 
 ## Implementation
 
-Built using Python and PyTorch for the reinforcement learning component, integrated with MPC solver for real-time control. The system was validated through extensive simulation testing on unstructured environment datasets.
+Built using Python and PyTorch for the reinforcement learning component, integrated with MPC solver for real-time control. **Custom datasets were developed using Hybrid A* path planning algorithm** to generate realistic reference trajectories for training and evaluation in unstructured parking environments. The dataset is publicly accessible via the GitHub repository below.
 
 ## Key Results
 

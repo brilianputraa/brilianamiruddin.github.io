@@ -18,7 +18,7 @@ Research conducted at the <strong>Vehicle Intelligence and Autonomy Lab (ViaLab)
   <div class="project-content">
     <h3 class="project-title">NUDRL-MPC</h3>
     <p class="project-subtitle">Mar 2024 - Dec 2024</p>
-    <p class="project-description">Deep RL-guided non-uniform MPC for robust path tracking. 90% success rate in unstructured environments.</p>
+    <p class="project-description">Deep RL-guided non-uniform MPC for low-speed path tracking. Custom Hybrid A* datasets. 90% success rate.</p>
     <div class="project-meta">
       <span class="project-tag">MPC</span>
       <span class="project-tag">RL</span>
