@@ -323,7 +323,7 @@
     }
   }
 
-  // PROFILE BUTTON - far LEFT edge
+  // PROFILE BUTTON - far LEFT edge (always visible)
   .site-sidebar-button {
     position: absolute !important;
     left: 8px !important;
@@ -341,17 +341,13 @@
       height: 32px !important;
       border-radius: 50%;
       border: 2px solid transparent;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .close-icon {
-      display: none;
-      width: 20px;
-      height: 20px;
-    }
-
-    &[aria-expanded="true"] {
-      img.sidebar-avatar { display: none; }
-      .close-icon { display: block; }
+    // Visual effect when sidebar is open
+    &[aria-expanded="true"] img.sidebar-avatar {
+      border-color: var(--link-base-color, #003be4);
+      box-shadow: 0 0 0 2px rgba(0, 59, 228, 0.2);
     }
 
     &:focus {
