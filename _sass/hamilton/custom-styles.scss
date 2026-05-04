@@ -310,43 +310,39 @@
 
 // Mobile-specific styles
 @media (max-width: 600px) {
-  // HEADER LAYOUT - Flexbox for clean positioning
+  // HEADER - override base theme absolute positioning
   .site-header {
     .wrapper {
-      display: flex;
+      display: flex !important;
       align-items: center;
       justify-content: space-between;
-      padding: 0 12px;
+      padding: 0 !important;
       height: 54px;
       position: relative;
-      gap: 8px;
+      width: 100%;
     }
   }
 
-  // PROFILE BUTTON - LEFT side (opens sidebar)
+  // PROFILE BUTTON - far LEFT edge
   .site-sidebar-button {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    order: 1;
-    padding: 6px;
-    margin: 0;
+    position: absolute !important;
+    left: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    padding: 6px !important;
+    margin: 0 !important;
     background: transparent;
     border: none;
     cursor: pointer;
     z-index: 110;
-    flex-shrink: 0;
 
     img.sidebar-avatar {
-      width: 32px;
-      height: 32px;
+      width: 32px !important;
+      height: 32px !important;
       border-radius: 50%;
       border: 2px solid transparent;
-      transition: transform 0.2s ease;
     }
 
-    // Close icon (shown when sidebar open)
     .close-icon {
       display: none;
       width: 20px;
@@ -365,25 +361,23 @@
     }
   }
 
-  // SITE TITLE - CENTER
+  // SITE TITLE - true CENTER
   .site-title {
-    order: 2;
-    flex: 1;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    float: none !important;
     text-align: center;
-    margin: 0;
-    float: none;
-    position: relative;
-    left: 0;
-    transform: none;
   }
 
-  // NAV MENU - RIGHT side (hamburger)
+  // NAV MENU - far RIGHT edge
   .site-nav {
-    order: 3;
-    position: relative;
-    top: 0;
-    right: 0;
-    flex-shrink: 0;
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    border: none !important;
   }
 
   // BACKDROP
@@ -405,7 +399,7 @@
     visibility: visible;
   }
 
-  // SIDEBAR DRAWER - slides from left
+  // SIDEBAR DRAWER
   .site-sidebar {
     position: fixed;
     top: 54px;
@@ -517,7 +511,7 @@
   }
 }
 
-// Desktop - hide mobile elements
+// Desktop
 @media screen and (min-width: 601px) {
   .site-sidebar { display: block !important; transform: none !important; }
   .sidebar-backdrop { display: none !important; }
