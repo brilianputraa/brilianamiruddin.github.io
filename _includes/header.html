@@ -11,7 +11,7 @@
         navTrigger.checked = false;
       }
 
-      // Toggle sidebar with smooth animation
+      // Toggle sidebar
       const isExpanded = sidebar.getAttribute('aria-expanded') === 'true';
 
       if (isExpanded) {
@@ -38,44 +38,35 @@
       button.setAttribute('aria-expanded', 'false');
     }
 
-    // Close sidebar when nav menu opens
     document.addEventListener('DOMContentLoaded', function() {
       const navTrigger = document.getElementById("nav-trigger");
       if (navTrigger) {
         navTrigger.addEventListener('change', function() {
-          if (this.checked) {
-            closeSidebar();
-          }
+          if (this.checked) closeSidebar();
         });
       }
 
-      // Close sidebar on backdrop click
       const backdrop = document.getElementById("sidebar-backdrop");
       if (backdrop) {
         backdrop.addEventListener('click', closeSidebar);
       }
 
-      // Close sidebar on escape key
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          closeSidebar();
-        }
+        if (e.key === 'Escape') closeSidebar();
       });
     });
   </script>
 
-  <!-- Backdrop for sidebar (mobile only) -->
   <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
 
-  <button class="site-sidebar-button" onclick="clickSidebarButton()" aria-label="Toggle sidebar menu" aria-expanded="false">
+  <button class="site-sidebar-button" onclick="clickSidebarButton()" aria-label="Toggle profile sidebar" aria-expanded="false">
     {%- if site.avatar contains "://" -%}
       {%- assign avatar = site.avatar -%}
     {%- else -%}
       {%- assign avatar = site.avatar | relative_url -%}
     {%- endif %}
-    <img src="{{ avatar }}" alt="Menu" class="sidebar-avatar">
-    <!-- Close icon (SVG) -->
-    <svg class="close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <img src="{{ avatar }}" alt="Profile" class="sidebar-avatar">
+    <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
       <line x1="18" y1="6" x2="6" y2="18"></line>
       <line x1="6" y1="6" x2="18" y2="18"></line>
     </svg>
