@@ -3,9 +3,13 @@
     {%- if site.avatar contains "://" -%}
       {%- assign avatar = site.avatar -%}
     {%- else -%}
+      {%- assign avatar_webp = '/assets/images/me.webp' | relative_url -%}
       {%- assign avatar = site.avatar | relative_url -%}
     {%- endif -%}
-    <img src="{{ avatar }}" class="author-avatar u-photo align-center" alt="{{ site.author }}">
+    <picture>
+      <source srcset="{{ avatar_webp }}" type="image/webp">
+      <img src="{{ avatar }}" class="author-avatar u-photo align-center" alt="{{ site.author }}" loading="lazy">
+    </picture>
   </div>
 {%- endif %}
 

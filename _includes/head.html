@@ -2,6 +2,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- JSON-LD Person Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author | escape }}",
+  "email": "{{ site.email }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.avatar | relative_url }}",
+  "sameAs": [
+    "https://github.com/brilianputraa",
+    "https://x.com/brilianputraa",
+    "https://scholar.google.com/citations?user=z1moK68AAAAJ&hl=en"
+  ]
+}
+</script>
+
 {% seo %}
 
 {% feed_meta %}
@@ -14,8 +31,8 @@
   {% include mathjax.html %}
 {% endif %}
 
-<!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans|Roboto|Roboto%20Slab|Inconsolata|Dancing%20Script|Noto%20Sans%20SC|Noto%20Sans%20TC|Noto%20Serif%20SC|Noto%20Serif%20TC|Ma%20Shan%20Zheng">
+<!-- Google Fonts - optimized with display=swap -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans|Roboto%20Slab|Inconsolata|Dancing%20Script&display=swap">
 
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <link rel="shortcut icon" type="image/png" href="{{ './favicon.png' | relative_url }}">
