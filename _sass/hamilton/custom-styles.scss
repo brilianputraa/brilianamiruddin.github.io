@@ -303,105 +303,340 @@
   }
 }
 
-// Mobile sidebar improvements
+// ============================================
+// MOBILE SIDEBAR REDESIGN
+// Modern drawer-style sidebar with smooth UX
+// ============================================
+
+// Profile avatar - becomes menu trigger on mobile
 .sidebar-avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+// Mobile-specific styles
 @media (max-width: 600px) {
-  // Better sidebar toggle - centered position
+  // Header container - clean minimal look
+  .site-header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    height: 54px;
+    position: relative;
+  }
+
+  // Sidebar toggle button - left aligned, clean
   .site-sidebar-button {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 4px;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 8px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img.sidebar-avatar {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      border: 2px solid var(--border-color, #828282);
+      border: 2px solid transparent;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    // Close icon (shown when sidebar open)
+    .close-icon {
+      display: none;
+      width: 24px;
+      height: 24px;
+      stroke: var(--text-color, #333);
+      stroke-width: 2;
+    }
+
+    // When sidebar is expanded
+    &[aria-expanded="true"] {
+      img.sidebar-avatar {
+        transform: scale(0);
+        opacity: 0;
+      }
+      .close-icon {
+        display: block;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid var(--link-base-color, #003be4);
+      outline-offset: 2px;
+      border-radius: 50%;
     }
   }
 
-  // Sidebar when expanded on mobile - centered overlay
-  .site-sidebar {
+  // Site title - centered
+  .site-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
+  // Navigation - right aligned
+  .site-nav {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-right: 0;
+  }
+
+  // BACKDROP - blur effect when sidebar open
+  .sidebar-backdrop {
     position: fixed;
     top: 54px;
     left: 0;
     right: 0;
     bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &:active {
+      cursor: pointer;
+    }
+  }
+
+  .sidebar-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // SIDEBAR DRAWER - slides in from left
+  .site-sidebar {
+    position: fixed;
+    top: 54px;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 85vw;
     z-index: 100;
     background: var(--background-color, #fff);
-    padding: 1.5rem;
+    border-right: 1px solid var(--border-color, #e1e4e8);
+    padding: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
 
-    .toc-title {
-      font-size: 1rem;
-      padding: 0.75rem;
+    // Slide animation
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+
+    // Hidden state (override default display:none)
+    &[aria-expanded="true"] {
+      transform: translateX(0);
+    }
+
+    &[aria-expanded="false"] {
+      transform: translateX(-100%);
+    }
+
+    // Profile section - compact and elegant
+    .sidebar-section {
+      padding: 0;
+      text-align: left;
+      width: 100%;
+      border-bottom: 1px solid var(--border-color, #e1e4e8);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    // Author avatar - smaller, clean
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin: 16px auto 12px;
+      display: block;
+      object-fit: cover;
+    }
+
+    // Contact info
+    ul.contact-list {
+      padding: 0 16px 16px;
+      margin: 0;
       text-align: center;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin: 8px 0;
+        font-size: 0.85rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        .sidebar-icon {
+          font-size: 0.75rem;
+          opacity: 0.7;
+        }
+
+        .contact-info {
+          max-width: 180px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    // Subscribe link
+    .feed-subscribe {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border-color, #e1e4e8);
+
+      .sidebar-icon {
+        font-size: 0.9rem;
+      }
+    }
+
+    // Social icons - compact row
+    ul.social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 12px 16px;
+      margin: 0;
+
+      li {
+        margin: 0;
+
+        a.social-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 8px;
+          transition: background 0.2s ease;
+
+          i {
+            font-size: 1.1rem;
+          }
+
+          &:hover {
+            background: var(--bg-secondary, #f1f3f5);
+          }
+        }
+      }
+    }
+
+    // TOC (Table of Contents) - if present
+    .toc-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 12px 16px;
+      text-align: left;
+      border: none;
+      background: var(--bg-secondary, #f6f8fa);
+      margin: 0;
     }
 
     .toc-nav {
-      max-height: calc(100vh - 180px);
-      width: 100%;
+      max-height: none;
+      border: none;
+      overflow-y: auto;
 
-      ul li a {
-        padding: 0.75rem 0.5rem;
-        font-size: 0.9rem;
-        text-align: center;
+      ul {
+        padding: 0;
+        margin: 0;
+
+        li a {
+          padding: 10px 16px;
+          font-size: 0.85rem;
+          border-bottom: 1px solid var(--border-color, #e1e4e8);
+          display: block;
+          transition: background 0.15s ease;
+
+          &:hover {
+            background: var(--bg-secondary, #f6f8fa);
+          }
+        }
+
+        li ul li a {
+          padding-left: 32px;
+          font-size: 0.8rem;
+        }
       }
-
-      li ul li a {
-        padding-left: 1rem;
-        font-size: 0.85rem;
-      }
-    }
-
-    // Author section improvements - centered
-    .sidebar-section {
-      padding: 0.75rem 0;
-      text-align: center;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .author-avatar {
-      width: 80px;
-      display: block;
-      margin: 0 auto 0.5rem auto;
-    }
-
-    ul.social-icons {
-      justify-content: center;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    ul.contact-list {
-      text-align: center;
     }
   }
 
   // Dark mode mobile sidebar
   @media (prefers-color-scheme: dark) {
-    .site-sidebar {
-      background: var(--bg-color, #1a1a2e);
+    .sidebar-backdrop {
+      background: rgba(0, 0, 0, 0.5);
     }
 
-    .site-sidebar-button img.sidebar-avatar {
-      border-color: var(--border-color, #2d2d44);
+    .site-sidebar {
+      background: var(--bg-color, #1a1a2e);
+      border-right-color: var(--border-color, #2d2d44);
+
+      .sidebar-section {
+        border-bottom-color: var(--border-color, #2d2d44);
+      }
+
+      ul.social-icons a.social-icon:hover {
+        background: var(--bg-secondary, #2d2d44);
+      }
+
+      .toc-title {
+        background: var(--bg-secondary, #16162a);
+      }
+
+      .toc-nav ul li a {
+        border-bottom-color: var(--border-color, #2d2d44);
+
+        &:hover {
+          background: var(--bg-secondary, #16162a);
+        }
+      }
     }
+
+    .site-sidebar-button .close-icon {
+      stroke: var(--text-color, #e1e4e8);
+    }
+  }
+}
+
+// Desktop - ensure sidebar always visible
+@media screen and (min-width: 601px) {
+  .site-sidebar {
+    display: block !important;
+    transform: none !important;
+  }
+
+  .sidebar-backdrop {
+    display: none !important;
+  }
+
+  .site-sidebar-button {
+    display: none !important;
   }
 }
