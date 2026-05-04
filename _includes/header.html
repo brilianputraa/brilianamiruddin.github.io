@@ -17,7 +17,7 @@
     {%- else -%}
       {%- assign avatar = site.avatar | relative_url -%}
     {%- endif %}
-    <i class="far fa-user" aria-hidden="true"></i>
+    <img src="{{ avatar }}" alt="Menu" class="sidebar-avatar">
   </button>
 
   <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>

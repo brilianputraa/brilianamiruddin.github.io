@@ -302,3 +302,77 @@
     border-top-color: var(--border-color, #2d2d44);
   }
 }
+
+// Mobile sidebar improvements
+.sidebar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  // Better sidebar toggle
+  .site-sidebar-button {
+    padding: 4px;
+
+    img.sidebar-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border-color, #828282);
+    }
+  }
+
+  // Sidebar when expanded on mobile
+  .site-sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: var(--background-color, #fff);
+    padding: 1rem;
+    overflow-y: auto;
+
+    .toc-title {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+
+    .toc-nav {
+      max-height: calc(100vh - 120px);
+
+      ul li a {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      li ul li a {
+        padding-left: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    // Author section improvements
+    .sidebar-section {
+      padding: 0.75rem 0;
+    }
+
+    .author-avatar {
+      width: 80px;
+    }
+  }
+
+  // Dark mode mobile sidebar
+  @media (prefers-color-scheme: dark) {
+    .site-sidebar {
+      background: var(--bg-color, #1a1a2e);
+    }
+
+    .site-sidebar-button img.sidebar-avatar {
+      border-color: var(--border-color, #2d2d44);
+    }
+  }
+}
