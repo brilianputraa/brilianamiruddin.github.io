@@ -1,15 +1,39 @@
 <div class="wrapper">
   <script>
     function clickSidebarButton() {
-      const elem = document.getElementById("site-sidebar")
-      if (elem.style.display == "none" || elem.style.display == "") {
-        elem.style.display = "block";
-        elem.setAttribute('aria-expanded', 'true');
+      const sidebar = document.getElementById("site-sidebar");
+      const navTrigger = document.getElementById("nav-trigger");
+
+      // Close nav menu if open
+      if (navTrigger && navTrigger.checked) {
+        navTrigger.checked = false;
+      }
+
+      // Toggle sidebar
+      if (sidebar.style.display == "none" || sidebar.style.display == "") {
+        sidebar.style.display = "flex";
+        sidebar.setAttribute('aria-expanded', 'true');
       } else {
-        elem.style.display = "none";
-        elem.setAttribute('aria-expanded', 'false');
+        sidebar.style.display = "none";
+        sidebar.setAttribute('aria-expanded', 'false');
       }
     }
+
+    // Close sidebar when nav menu opens
+    document.addEventListener('DOMContentLoaded', function() {
+      const navTrigger = document.getElementById("nav-trigger");
+      if (navTrigger) {
+        navTrigger.addEventListener('change', function() {
+          if (this.checked) {
+            const sidebar = document.getElementById("site-sidebar");
+            if (sidebar) {
+              sidebar.style.display = "none";
+              sidebar.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      }
+    });
   </script>
   <button class="site-sidebar-button" onclick="clickSidebarButton()" aria-label="Toggle sidebar menu" aria-expanded="false">
     {%- if site.avatar contains "://" -%}
